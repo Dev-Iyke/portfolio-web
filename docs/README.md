@@ -52,6 +52,7 @@ The site should feel like a **living product-engineering laboratory**: polished 
 ### Typography
 
 - **Satoshi Variable:** headings, body copy, navigation, and controls
+- **Recoleta Variable:** Special heading texts
 - **Geist Mono:** technical labels, dates, status text, code, and diagram annotations
 - Font files are self-hosted through `next/font/local` using WOFF2 variable files
 - Supported Satoshi weight range: `300–900`, including matching variable italics
@@ -214,16 +215,16 @@ The frontend should begin with typed local repositories. Those repository interf
 - [x] Install TanStack Query, Devtools, Zustand, Motion, and next-themes
 - [x] Add the initial application provider composition
 - [x] Add local Satoshi font assets
-- [ ] Finalize Satoshi and Geist Mono CSS mappings
-- [ ] Add the dark-first theme provider and accessible theme control
-- [ ] Replace starter metadata and starter page content
-- [ ] Establish design tokens, layout primitives, and responsive containers
-- [ ] Establish feature, type, data, and component conventions
+- [x] Finalize Satoshi, Recoleta, and Geist Mono CSS mappings
+- [x] Add the dark-first theme provider and accessible theme control
+- [x] Replace starter metadata and starter page content
+- [x] Establish design tokens, layout primitives, and responsive containers
+- [x] Establish feature, type, data, and component conventions
 
 ### Phase 2 — Application shell
 
-- [ ] Responsive header and navigation
-- [ ] Mobile navigation sheet
+- [x] Responsive header and navigation
+- [x] Mobile navigation sheet
 - [ ] Footer and global contact affordance
 - [ ] Skip link, focus treatment, reduced-motion behavior, and page container
 - [ ] Shared loading, empty, and error treatments
@@ -326,11 +327,10 @@ The following are valuable but must not delay the initial portfolio:
 
 The next implementation milestone is the **design-system foundation**, completed in this order:
 
-1. Clean up the font configuration and metadata.
-2. Implement dark-first theme handling without hydration flashes.
-3. Define the light and dark color tokens, accent color, typography scale, spacing, and motion rules.
-4. Build the responsive page container, section wrapper, and header shell.
-5. Create a small internal foundation page or initial homepage section that exercises typography, buttons, cards, surfaces, and both themes.
-6. Run lint and a production build before beginning the full hero design.
+1. Review and refine the foundation hero in both themes and at mobile widths.
+2. Add the footer and complete the shared application shell.
+3. Define the typed project content model and local repository boundary.
+4. Build the first selected-work section using verified placeholder-safe content.
+5. Run lint and a production build before expanding the homepage narrative.
 
 This milestone gives every later section a stable visual and technical foundation while remaining small enough to validate quickly.

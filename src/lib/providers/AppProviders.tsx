@@ -1,18 +1,18 @@
 "use client";
 
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { Toaster } from "@/components/ui/sonner";
-// import { store } from "@/redux/store";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ReactQueryProvider from "@/lib/providers/ReactQueryProvider";
+import { ThemeProvider } from "@/lib/providers/ThemeProvider";
 
 export default function AppProviders({ children }: { children: ReactNode }) {
   return (
-    <ReactQueryProvider>
-      {/* <Provider store={store}> */}
+    <ThemeProvider>
+      <ReactQueryProvider>
         <TooltipProvider>{children}</TooltipProvider>
-        <Toaster />
-      {/* </Provider> */}
-    </ReactQueryProvider>
+        <Toaster richColors />
+      </ReactQueryProvider>
+    </ThemeProvider>
   );
 }
