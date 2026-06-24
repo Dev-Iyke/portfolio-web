@@ -51,8 +51,8 @@ The site should feel like a **living product-engineering laboratory**: polished 
 
 ### Typography
 
-- **Satoshi Variable:** headings, body copy, navigation, and controls
-- **Recoleta Variable:** Special heading texts
+- **Satoshi Variable:** body copy, navigation, and controls
+- **Recoleta:** major display headings, loaded only at the weights used
 - **Geist Mono:** technical labels, dates, status text, code, and diagram annotations
 - Font files are self-hosted through `next/font/local` using WOFF2 variable files
 - Supported Satoshi weight range: `300–900`, including matching variable italics
@@ -225,19 +225,20 @@ The frontend should begin with typed local repositories. Those repository interf
 
 - [x] Responsive header and navigation
 - [x] Mobile navigation sheet
-- [ ] Footer and global contact affordance
-- [ ] Skip link, focus treatment, reduced-motion behavior, and page container
+- [x] Footer and global contact affordance
+- [x] Skip link, focus treatment, reduced-motion behavior, and page container
 - [ ] Shared loading, empty, and error treatments
 
 ### Phase 3 — Homepage narrative
 
-- [ ] Hero and availability
+- [x] Hero and availability foundation
 - [ ] Featured project presentation
 - [ ] Capability narrative
 - [ ] Engineering timeline
 - [ ] Principles and toolbox
 - [ ] Lab preview and contact CTA
-- [ ] Add restrained motion after responsive layouts are stable
+- [x] Add centralized, reduced-motion-safe animation primitives
+- [x] Add a restrained hero entrance sequence
 
 ### Phase 4 — Project laboratory
 
@@ -325,12 +326,12 @@ The following are valuable but must not delay the initial portfolio:
 
 ## Immediate next milestone
 
-The next implementation milestone is the **design-system foundation**, completed in this order:
+The next implementation milestone is the **selected-work foundation**, completed in this order:
 
-1. Review and refine the foundation hero in both themes and at mobile widths.
-2. Add the footer and complete the shared application shell.
-3. Define the typed project content model and local repository boundary.
-4. Build the first selected-work section using verified placeholder-safe content.
+1. Review the animated hero, footer, active navigation, and both themes at mobile widths.
+2. Define the typed project content model and local repository boundary.
+3. Create conservative seed entries for Noonprep and WesOnline Marketplace.
+4. Build the responsive selected-work section and evidence-level presentation.
 5. Run lint and a production build before expanding the homepage narrative.
 
 This milestone gives every later section a stable visual and technical foundation while remaining small enough to validate quickly.

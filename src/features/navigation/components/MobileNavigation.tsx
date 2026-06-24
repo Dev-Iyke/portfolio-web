@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Menu } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -12,9 +13,15 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { navigationItems } from "@/features/navigation/config/navigation";
+import {
+  isActiveRoute,
+  navigationItems,
+} from "@/features/navigation/config/navigation";
+import { cn } from "@/lib/utils";
 
 export function MobileNavigation() {
+  const pathname = usePathname();
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -35,16 +42,24 @@ export function MobileNavigation() {
           </SheetDescription>
         </SheetHeader>
         <nav className="flex flex-col gap-1 px-3" aria-label="Mobile navigation">
-          {navigationItems.map((item) => (
-            <SheetClose asChild key={item.href}>
-              <Link
-                href={item.href}
-                className="rounded-lg px-3 py-3 text-base font-medium transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              >
-                {item.label}
-              </Link>
-            </SheetClose>
-          ))}
+          {navigationItems.map((item) => {
+            const isActive = isActiveRoute(pathname, item.href);
+
+            return (
+              <SheetClose asChild key={item.href}>
+                <Link
+                  href={item.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={cn(
+                    "rounded-lg px-3 py-3 text-base font-medium transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                    isActive && "bg-muted text-foreground",
+                  )}
+                >
+                  {item.label}
+                </Link>
+              </SheetClose>
+            );
+          })}
           <SheetClose asChild>
             <Link
               href="/contact"

@@ -3,6 +3,7 @@ import { Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { SkipLink } from "@/components/layout/SkipLink";
+import { SiteFooter } from "@/features/navigation/components/SiteFooter";
 import { SiteHeader } from "@/features/navigation/components/SiteHeader";
 import AppProviders from "@/lib/providers/AppProviders";
 
@@ -88,6 +89,7 @@ export default function RootLayout({
           <div className="flex min-h-screen flex-col">
             <SiteHeader />
             {children}
+            <SiteFooter />
           </div>
         </AppProviders>
       </body>
