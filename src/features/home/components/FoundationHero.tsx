@@ -50,7 +50,7 @@ export function FoundationHero() {
                 size="lg"
                 className="bg-signal text-signal-foreground hover:bg-signal/85"
               >
-                <Link href="/work">
+                <Link href="#selected-work">
                   Explore selected work
                   <ArrowUpRight data-icon="inline-end" aria-hidden="true" />
                 </Link>

@@ -232,7 +232,7 @@ The frontend should begin with typed local repositories. Those repository interf
 ### Phase 3 — Homepage narrative
 
 - [x] Hero and availability foundation
-- [ ] Featured project presentation
+- [x] Featured project presentation
 - [ ] Capability narrative
 - [ ] Engineering timeline
 - [ ] Principles and toolbox
@@ -242,10 +242,12 @@ The frontend should begin with typed local repositories. Those repository interf
 
 ### Phase 4 — Project laboratory
 
-- [ ] Define project and case-study TypeScript contracts
-- [ ] Create typed local project repositories and verified seed content
-- [ ] Build the work index and filters
-- [ ] Build project detail pages
+- [x] Define the initial project TypeScript contract
+- [x] Create typed local project repositories and conservative seed content
+- [x] Define the initial case-study TypeScript contract
+- [x] Build the initial work index page
+- [ ] Add work index filters
+- [x] Build initial project detail pages
 - [ ] Add media, architecture diagrams, and evidence labels
 - [ ] Interview and verify the initial flagship projects
 
@@ -326,12 +328,12 @@ The following are valuable but must not delay the initial portfolio:
 
 ## Immediate next milestone
 
-The next implementation milestone is the **selected-work foundation**, completed in this order:
+The selected-work foundation has started. Current status:
 
-1. Review the animated hero, footer, active navigation, and both themes at mobile widths.
-2. Define the typed project content model and local repository boundary.
-3. Create conservative seed entries for Noonprep and WesOnline Marketplace.
-4. Build the responsive selected-work section and evidence-level presentation.
-5. Run lint and a production build before expanding the homepage narrative.
+- [x] Define the typed project content model and local repository boundary.
+- [x] Create conservative seed entries for Noonprep, WesOnline Marketplace, and this portfolio.
+- [x] Build the responsive selected-work section and evidence-level presentation.
+- [ ] Review the animated hero, footer, active navigation, selected work, and both themes at mobile widths.
+- [ ] Run lint and a production build before expanding the homepage narrative.
 
-This milestone gives every later section a stable visual and technical foundation while remaining small enough to validate quickly.
+The next frontend milestone should be the **capability narrative**, followed by work-index filters and deeper case-study structure. Backend planning should begin only after project, case-study, profile, timeline, and contact-form content needs are clear.
