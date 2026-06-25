@@ -233,7 +233,7 @@ The frontend should begin with typed local repositories. Those repository interf
 
 - [x] Hero and availability foundation
 - [x] Featured project presentation
-- [ ] Capability narrative
+- [x] Capability narrative
 - [ ] Engineering timeline
 - [ ] Principles and toolbox
 - [ ] Lab preview and contact CTA
