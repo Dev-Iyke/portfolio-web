@@ -237,7 +237,7 @@ The frontend should begin with typed local repositories. Those repository interf
 - [x] DevIyke Labs engineering philosophy
 - [ ] Engineering timeline
 - [x] Technical toolbox
-- [ ] Contact CTA
+- [x] Contact CTA
 - [x] Add centralized, reduced-motion-safe animation primitives
 - [x] Add a restrained hero entrance sequence
 

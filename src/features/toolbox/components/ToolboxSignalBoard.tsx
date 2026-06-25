@@ -2,15 +2,15 @@ import { toolboxOutcomes } from "@/features/toolbox/data/toolbox";
 
 export function ToolboxSignalBoard() {
   return (
-    <div className="relative overflow-hidden rounded-[2rem] border border-border/70 bg-card/70 p-4 shadow-sm sm:p-5">
-      <div
+    <div className="relative overflow-hidden">
+      {/* <div
         className="absolute -left-16 -top-16 size-44 rounded-full bg-signal/15 blur-3xl"
         aria-hidden="true"
-      />
-      <div
+      /> */}
+      {/* <div
         className="absolute -bottom-20 right-0 size-56 rounded-full bg-chart-2/15 blur-3xl"
         aria-hidden="true"
-      />
+      /> */}
       <div
         className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,var(--border)_1px,transparent_0)] opacity-25 [background-size:20px_20px]"
         aria-hidden="true"
