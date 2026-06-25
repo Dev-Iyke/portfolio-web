@@ -85,7 +85,7 @@ The site should feel like a **living product-engineering laboratory**: polished 
 3. Capability narrative: interface craft, systems, and product thinking
 4. Interactive engineering timeline
 5. Technical principles and toolbox
-6. DevIyke Labs experiment preview
+6. DevIyke Labs engineering philosophy
 7. Contact call-to-action
 
 The first screen must communicate identity, role, value, and the path to view work without requiring an animation to finish.
@@ -234,9 +234,10 @@ The frontend should begin with typed local repositories. Those repository interf
 - [x] Hero and availability foundation
 - [x] Featured project presentation
 - [x] Capability narrative
+- [x] DevIyke Labs engineering philosophy
 - [ ] Engineering timeline
 - [ ] Principles and toolbox
-- [ ] Lab preview and contact CTA
+- [ ] Contact CTA
 - [x] Add centralized, reduced-motion-safe animation primitives
 - [x] Add a restrained hero entrance sequence
 
