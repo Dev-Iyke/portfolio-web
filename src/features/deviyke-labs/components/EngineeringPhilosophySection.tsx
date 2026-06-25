@@ -35,8 +35,8 @@ export function EngineeringPhilosophySection() {
         </Reveal>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <Reveal delay={0.08} distance={18}>
-            <LabProcessVisual />
+          <Reveal delay={0.08} distance={18} className="lg:sticky lg:top-28">
+            <LabProcessVisual steps={labSteps} />
           </Reveal>
 
           <div className="grid gap-4">
