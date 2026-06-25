@@ -26,7 +26,7 @@ export function BrandLink() {
           Obasi Ikechukwu
         </span>
         <span className="mt-1 block font-recoleta text-[0.65rem] uppercase tracking-[0.18em] text-muted-foreground">
-          DevIyke Labs
+          Dev_Iyke Labs
         </span>
       </span>
     </Link>

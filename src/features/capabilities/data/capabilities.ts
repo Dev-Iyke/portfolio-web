@@ -17,13 +17,19 @@ export const capabilities = [
   {
     title: "Product-grade interfaces",
     summary:
-      "I turn product requirements into interfaces that feel clear, responsive, and dependable across real user journeys, not just polished static screens.",
+      "I turn product requirements into interfaces that feel clear, responsive, performant, and dependable across real user journeys, not just polished static screens.",
     proofPoints: [
       "Reusable feature sections that support product growth.",
       "Responsive layouts shaped around hierarchy, scanning, and user intent.",
-      "Accessibility, loading states, and empty states treated as product requirements.",
+      "Accessibility, performance, loading states, and empty states treated as product requirements.",
     ],
-    tools: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui"],
+    tools: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Performance",
+    ],
     tone: "cyan",
     visual: "interface",
   },
@@ -43,13 +49,13 @@ export const capabilities = [
   {
     title: "Maintainable delivery",
     summary:
-      "I care about the structure behind the screen: naming, folders, component boundaries, documentation, and decisions that make a project easier to extend after the first version ships.",
+      "I care about the structure behind the screen: naming, folders, component boundaries, documentation, and decisions that make a project easier to scale after the first version ships.",
     proofPoints: [
       "Focused custom components instead of oversized files.",
       "Documented tradeoffs, privacy boundaries, and implementation reasoning.",
       "Room for future backend, CMS, and content workflows without reshaping the UI from scratch.",
     ],
-    tools: ["Feature folders", "Design tokens", "Motion", "Documentation"],
+    tools: ["Feature folders", "Design tokens", "Scalability", "Documentation"],
     tone: "green",
     visual: "delivery",
   },
