@@ -29,23 +29,23 @@ export function TechnicalToolboxSection() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-          <Reveal delay={0.08} distance={18} className="lg:sticky lg:top-28">
+        <Reveal delay={0.08} distance={18}>
+          <div className="mt-10">
             <ToolboxSignalBoard />
-          </Reveal>
-
-          <div className="grid gap-5">
-            {toolboxGroups.map((group, index) => (
-              <Reveal
-                key={group.title}
-                delay={0.08 * (index + 1)}
-                distance={20}
-                className="min-h-full"
-              >
-                <ToolboxGroupPanel group={group} />
-              </Reveal>
-            ))}
           </div>
+        </Reveal>
+
+        <div className="mt-6 grid gap-5 lg:grid-cols-2">
+          {toolboxGroups.map((group, index) => (
+            <Reveal
+              key={group.title}
+              delay={0.08 * (index + 1)}
+              distance={20}
+              className="min-h-full"
+            >
+              <ToolboxGroupPanel group={group} />
+            </Reveal>
+          ))}
         </div>
       </PageContainer>
     </Section>
