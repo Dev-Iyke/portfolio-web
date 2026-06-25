@@ -2,6 +2,7 @@ import { CapabilityNarrativeSection } from "@/features/capabilities/components/C
 import { EngineeringPhilosophySection } from "@/features/deviyke-labs/components/EngineeringPhilosophySection";
 import { FoundationHero } from "@/features/home/components/FoundationHero";
 import { SelectedWorkSection } from "@/features/projects/components/SelectedWorkSection";
+import { TechnicalToolboxSection } from "@/features/toolbox/components/TechnicalToolboxSection";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <SelectedWorkSection />
       <CapabilityNarrativeSection />
       <EngineeringPhilosophySection />
+      <TechnicalToolboxSection />
     </main>
   );
 }
