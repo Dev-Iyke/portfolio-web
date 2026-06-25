@@ -16,7 +16,7 @@ export function ProjectCard({ project }: { project: Project }) {
   const caseStudyHref = `/work/${project.slug}`;
 
   return (
-    <Card className="relative h-full border-border/70 bg-card/70 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-signal/45 hover:shadow-[0_1.5rem_4rem_rgb(0_0_0/0.18)]">
+    <Card className="relative h-full border-border/70 bg-card/70 shadow-sm transition-all duration-300 hover:-translate-y-[1px] hover:border-signal/45 hover:shadow-[0_1.5rem_4rem_rgb(0_0_0/0.18)]">
       <CardHeader className="gap-4">
         <div className="flex items-start justify-between gap-4">
           <div>
