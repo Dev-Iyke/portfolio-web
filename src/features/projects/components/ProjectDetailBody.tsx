@@ -12,7 +12,7 @@ import type { Project, ProjectDecision } from "@/features/projects/types/project
 
 export function ProjectDetailBody({ project }: { project: Project }) {
   return (
-    <Section className="pt-0">
+    <Section className="pt-0 mt-12 lg:mt-0">
       <PageContainer>
         <div className="grid gap-6">
           <Reveal distance={16}>
