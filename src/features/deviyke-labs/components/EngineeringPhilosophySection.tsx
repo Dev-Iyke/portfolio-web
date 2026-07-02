@@ -28,8 +28,7 @@ export function EngineeringPhilosophySection() {
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
               DevIyke Labs is the working identity behind this portfolio: a
-              space for building with context, shaping usable flows, respecting
-              backend contracts, and documenting the reasoning behind the work.
+              space for building with context, shaping usable flows, respecting data and product constraints, and documenting the reasoning behind the work.
             </p>
           </div>
         </Reveal>
@@ -56,3 +55,4 @@ export function EngineeringPhilosophySection() {
     </Section>
   );
 }
+

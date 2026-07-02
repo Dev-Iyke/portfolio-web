@@ -18,12 +18,29 @@ export interface ProjectDecision {
   readonly description: string;
 }
 
+export interface ProjectFeature {
+  readonly name: string;
+  readonly roles: readonly string[];
+  readonly description: string;
+  readonly engineering: string;
+}
+
+export interface ProjectScreenshot {
+  readonly label: string;
+  readonly src?: string;
+  readonly alt?: string;
+}
+
 export interface ProjectCaseStudy {
   readonly problem: string;
   readonly approach: string;
   readonly decisions: readonly ProjectDecision[];
   readonly privacyNote: string;
   readonly nextSteps: readonly string[];
+  readonly outcome?: string;
+  readonly backendNote?: string;
+  readonly challenges?: readonly ProjectDecision[];
+  readonly screenshots?: readonly ProjectScreenshot[];
 }
 
 export interface Project {
@@ -31,6 +48,10 @@ export interface Project {
   readonly title: string;
   readonly kicker: string;
   readonly summary: string;
+  readonly heroImage?: {
+    readonly src: string;
+    readonly alt?: string;
+  };
   readonly evidenceStatus: ProjectEvidenceStatus;
   readonly role: string;
   readonly timeframe: string;
@@ -40,4 +61,9 @@ export interface Project {
   readonly links: readonly ProjectLink[];
   readonly caseStudy: ProjectCaseStudy;
   readonly featured: boolean;
+  readonly projectType?: string;
+  readonly surfaces?: readonly string[];
+  readonly features?: readonly ProjectFeature[];
+  readonly outcomes?: readonly string[];
+  readonly talkingPoints?: readonly string[];
 }

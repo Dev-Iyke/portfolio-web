@@ -11,14 +11,14 @@ export default function LabPage() {
   return (
     <RouteShell
       eyebrow="Lab"
-      title="Experiments and technical notes will live here after the core portfolio is stable."
-      description="The lab should not distract from the initial portfolio launch. It will become a place for experiments, architecture notes, interface ideas, and small backend explorations."
+      title="Experiments, technical notes, and product-engineering ideas."
+      description="A focused space for interface experiments, architecture notes, data-flow breakdowns, and small explorations that show how I think through product engineering problems."
       primaryHref="/"
       primaryLabel="Back to homepage"
       notes={[
         "Small experiments that show curiosity without bloating the main portfolio.",
         "Technical notes about interface architecture, data flow, and product decisions.",
-        "Future backend and AI-assisted ideas only after enough verified content exists.",
+        "Explorations around backend-aware UI, automation, and practical product systems.",
       ]}
     />
   );

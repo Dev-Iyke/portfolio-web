@@ -42,7 +42,7 @@ export function ProjectCard({ project }: { project: Project }) {
 
         <div>
           <p className="mb-3 font-mono text-[0.68rem] font-medium tracking-[0.16em] text-muted-foreground uppercase">
-            Evidence notes
+            Highlights
           </p>
           <ul className="space-y-3 text-sm leading-6 text-foreground/85">
             {project.highlights.map((highlight) => (

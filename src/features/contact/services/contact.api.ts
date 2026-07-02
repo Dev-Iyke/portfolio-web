@@ -28,7 +28,7 @@ export async function submitContactMessage(
 
     const response = {
       message:
-        "Message received. Backend delivery will be connected when the API is ready.",
+        "Message received. I will review the context and respond with a clear next step.",
       receivedAt: new Date().toISOString(),
       referenceId: `mock-${Date.now()}`,
     };
@@ -64,3 +64,4 @@ export function useSubmitContactMessage() {
       submitContactMessage(payload),
   });
 }
+

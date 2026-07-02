@@ -19,18 +19,18 @@ export function WorkIndexHero() {
               Projects, product decisions, and engineering evidence.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-              This page starts with the same typed local repository used on the
-              homepage. Filters, richer case-study previews, and backend-backed
-              content will come after the project model settles.
+              A curated archive of product work, interface systems, dashboard
+              architecture, API-connected flows, and the engineering decisions
+              behind them.
             </p>
           </Reveal>
           <Reveal delay={0.12} distance={18}>
             <div className="grid gap-3 font-mono text-[0.72rem] uppercase tracking-[0.14em] text-muted-foreground">
               <div className="rounded-2xl border border-border bg-surface/70 p-4">
-                Frontend-first proof
+                Frontend architecture
               </div>
               <div className="rounded-2xl border border-border bg-surface/70 p-4">
-                Backend-ready model
+                API-connected workflows
               </div>
               <div className="rounded-2xl border border-border bg-surface/70 p-4">
                 Privacy-safe case studies

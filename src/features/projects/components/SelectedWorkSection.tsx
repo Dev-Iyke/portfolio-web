@@ -30,9 +30,9 @@ export function SelectedWorkSection() {
               Product stories shaped as engineering evidence.
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
-              These entries are intentionally modeled like future API data. The
-              UI can mature now, then the backend can take over the same
-              contract when the content model is stable.
+              A focused look at product interfaces, dashboard systems, API
+              integration, and frontend architecture across real application
+              work.
             </p>
             <div className="mt-7">
               <Button asChild variant="outline">

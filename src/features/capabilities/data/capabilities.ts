@@ -36,11 +36,11 @@ export const capabilities = [
   {
     title: "API-connected workflows",
     summary:
-      "I build frontend flows with a clear understanding of the backend contract: data shape, validation, server state, auth-aware screens, and graceful failure paths.",
+      "I build frontend flows around clear data contracts: payload shape, validation, server state, auth-aware screens, and graceful failure paths.",
     proofPoints: [
       "Clean collaboration around payloads, edge cases, and response states.",
       "UI presentation separated from data access so API changes stay manageable.",
-      "Data boundaries modeled early enough to make future backend integration smoother.",
+      "Data boundaries modeled clearly so API integration stays predictable as the product grows.",
     ],
     tools: ["REST APIs", "TanStack Query", "Validation", "Auth flows"],
     tone: "violet",
@@ -53,10 +53,11 @@ export const capabilities = [
     proofPoints: [
       "Focused custom components instead of oversized files.",
       "Documented tradeoffs, privacy boundaries, and implementation reasoning.",
-      "Room for future backend, CMS, and content workflows without reshaping the UI from scratch.",
+      "Room for API, CMS, and content workflows without reshaping the UI from scratch.",
     ],
     tools: ["Feature folders", "Design tokens", "Scalability", "Documentation"],
     tone: "green",
     visual: "delivery",
   },
 ] as const satisfies readonly Capability[];
+
