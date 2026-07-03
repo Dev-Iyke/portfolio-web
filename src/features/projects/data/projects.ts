@@ -3,13 +3,13 @@ import type { Project } from "@/features/projects/types/project";
 export const projects = [
   {
     slug: "greysoft-school-management-platform",
-    title: "Greysoft School Management Platform",
+    title: "Greysoft School Management",
     kicker: "Multi-tenant school SaaS",
     summary:
       "A multi-tenant school management platform with role-based dashboards for school operations, academics, exams, payments, messaging, applicant onboarding, and Greysoft platform administration.",
     evidenceStatus: "shipped",
-    role: "Frontend Engineer / Full-stack Integration Engineer",
-    timeframe: "12 Months",
+    role: "Lead Frontend Engineer / Full-stack Integration Engineer",
+    timeframe: "private  / production-adjacent",
     projectType: "Frontend-heavy full-stack",
     stack: [
       "Next.js",
@@ -109,7 +109,13 @@ export const projects = [
       "Integrated Socket.IO for realtime messaging and exam progress feedback.",
       "Developed reusable dashboard primitives for data-heavy school operations.",
     ],
-    links: [],
+    links: [
+      {
+        label: "Visit Greysoft",
+        href: "https://greysoft.net",
+        kind: "live",
+      },
+    ],
     caseStudy: {
       problem:
         "Schools often coordinate admissions, academics, payments, communication, reporting, and exams across disconnected tools. That creates duplicated work, unclear ownership, and extra operational load for administrators, teachers, students, sponsors, and platform operators.",
@@ -449,9 +455,9 @@ export const projects = [
     kicker: "Retail operations and marketplace system",
     summary:
       "A two-surface ERP frontend that combines an internal operations dashboard with a wholesaler-facing marketplace for catalog management, draft ordering, checkout, procurement workflows, and inventory continuity.",
-    evidenceStatus: "active-build",
-    role: "Frontend Engineer / Product-Focused Frontend Developer",
-    timeframe: "Private / in progress",
+    evidenceStatus: "shipped",
+    role: "Sole Frontend Engineer",
+    timeframe: "Private / 4 Months",
     projectType: "Frontend-heavy full-stack / multi-surface ERP frontend",
     stack: [
       "Next.js",
@@ -550,7 +556,13 @@ export const projects = [
       "Applied reusable admin UI patterns across product management, procurement, payments, and operational dashboards.",
       "Connected both product surfaces through consistent API integration, validation, and dashboard architecture.",
     ],
-    links: [],
+    links: [
+      {
+        label: "Visit Jooav",
+        href: "https://jooav.com",
+        kind: "live",
+      },
+    ],
     caseStudy: {
       problem:
         "Retail and wholesale operations often split internal stock control, procurement coordination, order review, and buyer restocking into disconnected tools. That slows down operations and creates friction between the teams managing inventory and the people trying to place or fulfill orders.",
@@ -664,9 +676,225 @@ export const projects = [
     featured: true,
   },
   {
+    slug: "getcassava-marketplace-platform",
+    title: "GetCassava Marketplace",
+    kicker: "Multi-role agricultural marketplace",
+    summary:
+      "A multi-role cassava marketplace frontend that connects buyers, farmers or vendors in Uganda, to administrators through product discovery, ordering, payment flows, vendor operations, and marketplace management dashboards.",
+    evidenceStatus: "shipped",
+    role: "Frontend Engineer / Product-Focused Frontend Developer",
+    timeframe: "Private / 4 Months",
+    projectType: "Frontend Development",
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Redux Toolkit",
+      "redux-persist",
+      "React Context",
+      "React Hook Form",
+      "Zod",
+      "Radix UI",
+      "Firebase Auth",
+      "ApexCharts",
+      "XLSX",
+    ],
+    impactAreas: [
+      "frontend-architecture",
+      "product-interface",
+      "workflow-design",
+      "backend-foundation",
+      "performance-accessibility",
+    ],
+    surfaces: [
+      "Public storefront",
+      "Buyer dashboard",
+      "Farmer or vendor dashboard",
+      "Admin dashboard",
+    ],
+    highlights: [
+      "Built a multi-role marketplace frontend with distinct buyer, farmer or vendor, and admin experiences inside one product surface.",
+      "Implemented commerce flows covering product discovery, cart, wishlist, addresses, checkout, reviews, and payment-provider redirects.",
+      "Created operational dashboards for vendor workflows and admin management, including product controls, promotions, analytics, exports, and management tables.",
+    ],
+    features: [
+      {
+        name: "Public marketplace and product discovery",
+        roles: ["Visitors", "Buyers"],
+        description:
+          "The public-facing experience helps users discover cassava products through marketplace browsing, landing sections, search, and product entry points.",
+        engineering:
+          "App Router route structure, reusable marketing sections, responsive navigation, shared product presentation patterns, and image-driven commerce UI.",
+      },
+      {
+        name: "Authentication and role-aware access",
+        roles: ["Buyers", "Farmers or vendors", "Admins"],
+        description:
+          "The app supports sign up, sign in, password reset, verification, social login, and role-aware redirects into different dashboard experiences.",
+        engineering:
+          "Redux Toolkit auth flows, persisted state, cookie-backed session handling, Firebase social authentication, React Hook Form, and Zod validation.",
+      },
+      {
+        name: "Buyer commerce workflow",
+        roles: ["Buyers"],
+        description:
+          "Buyers can browse products, manage carts and wishlists, save addresses, review past orders, complete checkout, and continue into payment-provider flows.",
+        engineering:
+          "Shared dashboard modules, centralized request utilities, role-based route handling, and server-backed cart, order, review, and address interactions.",
+      },
+      {
+        name: "Farmer or vendor operations",
+        roles: ["Farmers", "Vendors"],
+        description:
+          "Vendors get a dedicated dashboard for product management, incoming order requests, transaction visibility, and profile maintenance.",
+        engineering:
+          "Role-scoped dashboard components, shared operational UI primitives, upload-friendly form flows, and centralized data actions through shared context.",
+      },
+      {
+        name: "Admin marketplace management",
+        roles: ["Admins"],
+        description:
+          "Administrators can manage users, products, promotions, staff, orders, analytics, announcements, and status-driven marketplace operations.",
+        engineering:
+          "Searchable and paginated tables, export utilities, publish and unpublish actions, management forms, image uploads, and dashboard analytics modules.",
+      },
+      {
+        name: "Payment and operational integrations",
+        roles: ["Buyers", "Admins"],
+        description:
+          "Checkout flows connect the marketplace to external payment providers and backend-managed order lifecycles.",
+        engineering:
+          "Redirect-based payment initiation, centralized API request handling, cookie and token coordination, and UI feedback states around transactional flows.",
+      },
+    ],
+    outcomes: [
+      "Delivered a realistic marketplace frontend with both commerce and operations depth.",
+      "Established reusable dashboard patterns across buyer, vendor, and admin product surfaces.",
+      "Created a clear frontend foundation for future backend hardening, stronger guards, and typed API-client improvements.",
+    ],
+    talkingPoints: [
+      "Built a multi-role marketplace frontend with separate buyer, farmer or vendor, and admin dashboard experiences.",
+      "Implemented authentication with verification flows, social login, JWT-cookie session handling, and role-aware redirects.",
+      "Covered buyer commerce flows from discovery through cart, wishlist, address management, checkout, and payment-provider redirects.",
+      "Built admin product management with filters, pagination, publish controls, image uploads, exports, and marketplace operations screens.",
+      "Used centralized API request helpers, Redux auth workflows, shared dashboard context, and reusable UI primitives to manage app complexity.",
+    ],
+    links: [],
+    caseStudy: {
+      problem:
+        "Cassava supply and demand can be fragmented across offline channels, which makes discovery, trust, ordering, and day-to-day marketplace operations harder to coordinate. The product needed to support not just buyers, but also the vendors supplying goods and the administrators managing the marketplace itself.",
+      approach:
+        "GetCassava is structured as one marketplace frontend with multiple role-based surfaces: a public storefront, buyer dashboard, farmer or vendor dashboard, and admin dashboard. The frontend combines centralized API calls, shared operational UI patterns, auth workflows, and role-aware route organization to keep each experience focused while still feeling like one product.",
+      decisions: [
+        {
+          title: "Separate workflows by role-specific routes and dashboards",
+          description:
+            "Buyers, vendors, and admins all need different navigation, data, and actions, so route-level and component-level separation keeps the product easier to reason about.",
+        },
+        {
+          title: "Centralize backend requests in one API layer",
+          description:
+            "A shared request utility makes products, carts, wishlists, orders, discounts, transactions, and user operations easier to reuse and audit across the app.",
+        },
+        {
+          title: "Use Redux Toolkit for auth-heavy workflows",
+          description:
+            "Verification, login, password reset, persisted session behavior, and redirect-sensitive auth states benefit from predictable async state handling.",
+        },
+        {
+          title: "Use shared dashboard context for cross-surface data",
+          description:
+            "Products, carts, wishlists, transactions, promotions, and operational loading states are shared across dense dashboard flows, so a common context reduces repetition.",
+        },
+        {
+          title: "Invest in reusable operational UI patterns",
+          description:
+            "Tables, forms, dialogs, tabs, empty states, pagination, and toasts repeat throughout the app, so reusable primitives help keep the experience consistent.",
+        },
+        {
+          title: "Support real marketplace operations, not just storefront pages",
+          description:
+            "Admin screens include publishing, filtering, export, analytics, and management flows because operational tooling is part of the actual product value.",
+        },
+      ],
+      challenges: [
+        {
+          title: "Multi-role product breadth",
+          description:
+            "Combining a storefront, buyer commerce flows, vendor tools, and admin operations in one frontend increases navigation, state, and maintenance complexity.",
+        },
+        {
+          title: "Mixed state management pressure",
+          description:
+            "Redux, context, cookies, and request helpers all carry part of the app state today, so future refactoring will benefit from clearer domain boundaries.",
+        },
+        {
+          title: "Transactional flow sensitivity",
+          description:
+            "Checkout, payment redirects, address selection, and order handling need careful UI feedback because failure states can directly affect purchase trust.",
+        },
+        {
+          title: "Public case-study privacy",
+          description:
+            "User records, addresses, transactions, payment references, and operational dashboard data need redaction or seeded demo values for public screenshots.",
+        },
+      ],
+      outcome:
+        "The result is a product-rich marketplace frontend that shows both commerce thinking and operations design, with realistic role-based dashboards, backend integration, and strong room for future architectural hardening.",
+      backendNote:
+        "The frontend integrates with a separate backend service for authentication, products, carts, wishlists, users, addresses, reviews, orders, discounts, transactions, and payment initialization. A backend review later would deepen the full-stack case study.",
+      privacyNote:
+        "Public screenshots and notes should use demo or seeded data only. Real names, emails, phone numbers, addresses, order IDs, transaction references, payment references, and production marketplace records should not be exposed.",
+      screenshots: [
+        {
+          label: "Public homepage and product discovery",
+          src: "/projects/get-cassava/getcassava-landing-banner.png",
+          alt: "GetCassava landing page preview",
+        },
+        {
+          label: "Product listing or product details page",
+        },
+        {
+          label: "Buyer dashboard overview",
+        },
+        {
+          label: "Buyer cart and checkout flow",
+        },
+        {
+          label: "Farmer or vendor dashboard",
+        },
+        {
+          label: "Farmer orders or transactions view",
+        },
+        {
+          label: "Admin dashboard overview",
+        },
+        {
+          label: "Admin product management table",
+        },
+        {
+          label: "Add or edit product form with demo images",
+        },
+        {
+          label: "Promotions and discounts screen",
+        },
+        {
+          label: "Mobile homepage or mobile dashboard state",
+        },
+      ],
+      nextSteps: [
+        "Add the storefront banner screenshot once it is ready.",
+        "Choose one buyer flow and one admin operations flow as the anchor visuals for the case study.",
+        "Review the backend repo later to strengthen the full-stack narrative around auth, orders, and payment initialization.",
+      ],
+    },
+    featured: true,
+  },
+  {
     slug: "noonprep",
     title: "Noonprep",
-    kicker: "Learning product experience",
+    kicker: "Revolutionizing learning experience",
     summary:
       "An education-focused product experience centered on clear study flows, responsive learner interfaces, and structured learning activity screens.",
     evidenceStatus: "active-build",
@@ -683,7 +911,13 @@ export const projects = [
       "Structuring UI and content boundaries around learning actions, progress states, and assessment flows.",
       "Prioritizing responsive usability across small screens and desktop layouts.",
     ],
-    links: [],
+    links: [
+      {
+        label: "Visit Noonprep",
+        href: "https://noonprep.com",
+        kind: "live",
+      },
+    ],
     caseStudy: {
       problem:
         "Learning products need to make progress feel simple: learners should understand where they are, what to do next, and how the interface supports their study rhythm.",
@@ -719,28 +953,101 @@ export const projects = [
   {
     slug: "deviyke-labs-portfolio",
     title: "DevIyke Labs Portfolio",
-    kicker: "Portfolio as product lab",
+    kicker: "Portfolio system and case-study engine",
     summary:
-      "A dark-first developer portfolio built as a product experience, with typed content, polished motion, case-study pages, and a clear path into API-backed content management.",
+      "A dark-first portfolio product built to present frontend craft, structured case studies, polished interaction design, and a backend-ready content architecture in one cohesive experience.",
     evidenceStatus: "active-build",
     role: "Product engineer and owner",
     timeframe: "2026",
+    projectType: "Frontend-heavy full-stack / personal product system",
     stack: [
       "Next.js",
+      "React",
       "TypeScript",
       "Tailwind CSS",
       "shadcn/ui",
       "Motion",
+      "TanStack Query",
+      "Axios",
+      "React Hook Form",
+      "Zod",
+      "Sonner",
+      "next-themes",
     ],
     impactAreas: [
       "frontend-architecture",
+      "product-interface",
+      "workflow-design",
       "performance-accessibility",
       "backend-foundation",
     ],
+    surfaces: [
+      "Narrative homepage",
+      "Work index",
+      "Project case-study pages",
+      "Recruiter brief page",
+      "About page",
+      "Contact workflow",
+      "Lab page",
+    ],
     highlights: [
-      "Using typed content repositories to keep presentation components clean and data access predictable.",
-      "Establishing dark/light theme tokens, motion primitives, and reusable layout patterns.",
-      "Keeping content, layout, and data boundaries clear as the portfolio grows.",
+      "Built the portfolio as a product system instead of a static gallery, with reusable sections, case-study templates, and a clearer narrative structure.",
+      "Created typed project repositories and detail-page contracts so content can move from local seed data to a backend CMS without rewriting the UI layer.",
+      "Established a dark-first visual system with theme switching, self-hosted typography, motion primitives, responsive layout foundations, and form infrastructure.",
+    ],
+    features: [
+      {
+        name: "Narrative-driven landing experience",
+        roles: ["Recruiters", "Hiring managers", "Collaborators"],
+        description:
+          "The homepage is structured to communicate identity, selected work, engineering philosophy, toolbox depth, and a clear contact path without feeling like a static resume.",
+        engineering:
+          "Section-based composition, reusable layout primitives, mobile-first spacing decisions, and motion that respects reduced-motion preferences.",
+      },
+      {
+        name: "Typed work and case-study system",
+        roles: ["Portfolio owner", "Visitors"],
+        description:
+          "Projects can be listed once and reused across the homepage, work index, and detail routes through a shared content model.",
+        engineering:
+          "Type-safe project contracts, repository boundaries, slug-based routing, and structured case-study fields for decisions, challenges, screenshots, and outcomes.",
+      },
+      {
+        name: "Theme and typography system",
+        roles: ["All visitors"],
+        description:
+          "The interface keeps a distinct dark-first identity while still supporting light mode cleanly across the app.",
+        engineering:
+          "next-themes integration, CSS token mapping, self-hosted local fonts, and shared visual primitives that keep components consistent.",
+      },
+      {
+        name: "Validated contact workflow",
+        roles: ["Recruiters", "Clients", "Collaborators"],
+        description:
+          "Visitors can send a structured inquiry through a form designed for real backend wiring rather than a decorative contact block.",
+        engineering:
+          "React Hook Form, Zod validation, TanStack Query mutations, typed Axios helpers, toast feedback, and mock-or-live API behavior through shared service boundaries.",
+      },
+      {
+        name: "Backend-ready frontend boundaries",
+        roles: ["Portfolio owner"],
+        description:
+          "The app is already organized so content can later move into an admin-backed API workflow without forcing presentation-level rewrites.",
+        engineering:
+          "Dedicated repositories, provider composition, service-layer utilities, and separation between UI sections, feature data, and transport details.",
+      },
+    ],
+    outcomes: [
+      "Established a polished portfolio foundation that already functions as a product demo and not just a project list.",
+      "Created reusable content and layout systems that make it easier to grow work pages, recruiter views, and backend integration later.",
+      "Improved the clarity of the portfolio story by aligning design, interaction, content structure, and technical boundaries.",
+    ],
+    talkingPoints: [
+      "Designed the portfolio as its own case-study platform rather than a one-off marketing page.",
+      "Used typed repositories so UI sections stay presentation-focused while content remains portable to a future API.",
+      "Built provider composition around theming, motion, React Query, tooltips, and toast feedback in a way that keeps global concerns centralized.",
+      "Implemented a real contact-service pattern with validation, mutation handling, and API interceptors instead of treating the form as dead UI.",
+      "Kept the frontend polished while preserving a clear migration path toward private CMS and backend-managed content.",
     ],
     links: [
       {
@@ -751,35 +1058,95 @@ export const projects = [
     ],
     caseStudy: {
       problem:
-        "A portfolio can easily become a static gallery, but this one is designed to show product thinking, frontend craft, and structured case-study content.",
+        "Many developer portfolios look polished at first glance but fail to show how the person structures products, thinks about systems, or communicates engineering decisions. The challenge here was to create a portfolio that feels like a real product and also acts as evidence of frontend depth and backend-ready thinking.",
       approach:
-        "Treat the portfolio like a product: build a polished frontend, define typed content boundaries, and keep the experience easy to extend.",
+        "This portfolio is being built as a modular product system. Public-facing pages are composed from feature sections and typed repositories, while theming, motion, contact flows, and case-study pages are treated as reusable foundations instead of isolated one-off implementations.",
       decisions: [
         {
-          title: "Use typed content repositories",
+          title: "Model project content through typed repositories",
           description:
-            "The UI consumes project data through repository functions so presentation components stay focused and predictable.",
+            "Project cards, work pages, and case-study routes all read from one structured content layer, which keeps rendering logic simpler now and makes future API migration much easier.",
         },
         {
-          title: "Make dark mode the signature theme",
+          title: "Keep global app concerns centralized",
           description:
-            "The visual system starts from a dark editorial/product feel while keeping light mode fully supported through CSS variables.",
+            "Theme handling, motion configuration, React Query, toasts, and shared providers are composed in one place so cross-cutting behavior stays predictable.",
         },
         {
-          title: "Keep animation centralized",
+          title: "Make dark mode a first-class product decision",
           description:
-            "Motion primitives live in a shared layer so sections can feel alive without scattering animation settings everywhere.",
+            "The visual language starts from a dark editorial feel, but token-based theming and next-themes support keep light mode fully viable instead of treating it as an afterthought.",
+        },
+        {
+          title: "Use local fonts and shared visual primitives",
+          description:
+            "Self-hosted typography, reusable layout containers, and shared UI patterns help the portfolio feel more intentional and reduce drift as sections expand.",
+        },
+        {
+          title: "Build the contact flow like a real integration surface",
+          description:
+            "The contact page uses validated form state, service-layer requests, mutation hooks, and centralized Axios behavior so backend wiring later will be straightforward.",
+        },
+        {
+          title: "Treat case studies as product pages, not long text dumps",
+          description:
+            "Each project page is structured around context, features, engineering decisions, and tradeoffs so visitors can scan quickly or read deeper depending on their interest.",
         },
       ],
+      challenges: [
+        {
+          title: "Balancing atmosphere with clarity",
+          description:
+            "A visually rich portfolio can become distracting quickly, so the design needed enough personality to feel memorable without weakening readability or credibility.",
+        },
+        {
+          title: "Avoiding repeated section patterns",
+          description:
+            "Because the homepage contains several narrative blocks, each section needed enough variation in layout and tone to stay engaging without feeling visually noisy.",
+        },
+        {
+          title: "Designing for future backend integration early",
+          description:
+            "The content model, contact workflow, and project data structure had to support a future CMS and API without overengineering the first frontend release.",
+        },
+        {
+          title: "Writing honest public-facing case-study content",
+          description:
+            "The portfolio needs to sound confident and specific while still staying accurate about shipped work, active builds, and areas that are intentionally still evolving.",
+        },
+      ],
+      outcome:
+        "The result is a portfolio foundation that already demonstrates product thinking, frontend architecture, interaction quality, and integration discipline while remaining ready for deeper content, screenshots, and backend-backed administration.",
+      backendNote:
+        "Today the portfolio uses typed local repositories and a frontend service layer. Those boundaries are intentionally shaped so projects, profile content, analytics, contact handling, and a private admin workflow can later move into a dedicated API without changing the presentation architecture.",
       privacyNote:
-        "This case study can be public in more detail because it documents the portfolio itself and the reasoning behind the implementation.",
+        "Because this project documents the portfolio itself, it can be discussed publicly in more detail than client work. Even so, any future analytics, contact records, or admin functionality should stay privacy-conscious and avoid exposing sensitive personal or visitor data.",
+      screenshots: [
+        {
+          label: "Homepage hero and selected work flow",
+        },
+        {
+          label: "Project detail page layout",
+        },
+        {
+          label: "Contact page and validated form states",
+        },
+        {
+          label: "Light and dark theme comparison",
+        },
+        {
+          label: "Mobile navigation and responsive homepage",
+        },
+      ],
       nextSteps: [
-        "Add real screenshots as the interface matures.",
-        "Refine profile, timeline, and contact content as the portfolio matures.",
-        "Connect the content model to an API-backed workflow when the portfolio admin layer is ready.",
+        "Add polished screenshots for the homepage, case-study detail page, and contact workflow.",
+        "Refine the about, brief, and lab pages as supporting narratives mature.",
+        "Connect the content model to a backend-managed workflow when the admin and CMS requirements are stable.",
       ],
     },
     featured: true,
   },
 ] as const satisfies readonly Project[];
+
+
 

@@ -4,7 +4,7 @@ import { Reveal } from "@/components/motion/Reveal";
 
 export function WorkIndexHero() {
   return (
-    <Section className="relative overflow-hidden pb-10 pt-20 sm:pt-24 lg:pt-28">
+    <Section className="relative overflow-hidden pb-10 md:pb-0 lg:pb-0 pt-20 sm:pt-24 lg:pt-28">
       <div
         className="pointer-events-none absolute right-8 top-16 h-64 w-64 rounded-full bg-signal/10 blur-3xl"
         aria-hidden="true"
