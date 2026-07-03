@@ -335,7 +335,7 @@ export const projects = [
       "Supported multi-tenant behavior through tenant bootstrap and runtime branding.",
     ],
     links: [{
-      label: "View Project",
+      label: "View WesOnline",
       kind: "live",
       href: "https://app.wesonline.ng"
     }],
@@ -893,23 +893,112 @@ export const projects = [
   },
   {
     slug: "noonprep",
-    title: "Noonprep",
-    kicker: "Revolutionizing learning experience",
+    title: "NoonPrep Exam Preparation Platform",
+    kicker: "Student exam-preparation platform",
     summary:
-      "An education-focused product experience centered on clear study flows, responsive learner interfaces, and structured learning activity screens.",
+      "A student-focused exam preparation and simulation platform with personalized dashboards, guided practice, timed exam simulations, analytics, resources, and realtime quiz challenges.",
     evidenceStatus: "active-build",
-    role: "Frontend-heavy full-stack developer",
-    timeframe: "Current",
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    role: "Frontend Engineer",
+    timeframe: "Private / in progress",
+    projectType: "Frontend-heavy full-stack",
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "TanStack Query",
+      "Redux Toolkit",
+      "Axios",
+      "React Hook Form",
+      "Zod",
+      "Laravel Echo",
+      "Recharts",
+    ],
     impactAreas: [
       "frontend-architecture",
       "product-interface",
       "workflow-design",
+      "backend-foundation",
+      "performance-accessibility",
+    ],
+    surfaces: [
+      "Public landing site",
+      "Auth and onboarding",
+      "Student dashboard",
+      "Study Arena",
+      "Practice sessions",
+      "Exam sessions",
+      "Quiz Arena",
+      "Analytics",
+      "Resources",
+      "Profile and settings",
     ],
     highlights: [
-      "Designing learner-facing flows that make study progress and next actions easy to understand.",
-      "Structuring UI and content boundaries around learning actions, progress states, and assessment flows.",
-      "Prioritizing responsive usability across small screens and desktop layouts.",
+      "Built a personalized student dashboard that turns backend learning data into readiness signals, streaks, recommendations, and clearer next actions.",
+      "Implemented guided practice, timed exam simulation, and multiple quiz flows with validated setup forms and session continuity behavior.",
+      "Integrated realtime live challenge gameplay with server-driven phase changes, reconnect recovery, and live ranking updates.",
+    ],
+    features: [
+      {
+        name: "Authentication and student onboarding",
+        roles: ["Students"],
+        description:
+          "Students can sign up, sign in, reset passwords, join through school-linked flows, and continue into a guided setup process before using the dashboard.",
+        engineering:
+          "React Hook Form, Zod validation, shared Axios auth behavior, Redux-backed user hydration, Google auth integration, and redirect preservation for invitation-based flows.",
+      },
+      {
+        name: "Personalized learner dashboard",
+        roles: ["Students"],
+        description:
+          "The dashboard turns learning data into actionable study direction through readiness cues, streaks, smart planning, subject performance, and activity summaries.",
+        engineering:
+          "React Query-powered dashboard hooks, reusable cards and state views, responsive layout patterns, and profile-aware UI copy.",
+      },
+      {
+        name: "Study Arena and exam setup flows",
+        roles: ["Students"],
+        description:
+          "Students can choose guided practice or timed exam simulation, then configure sessions by exam type, subject, topics, question count, difficulty, and other preparation parameters.",
+        engineering:
+          "Schema-validated setup forms, feature-first modules, and API-backed session creation flows that keep the setup experience structured and repeatable.",
+      },
+      {
+        name: "Practice and exam session runtime",
+        roles: ["Students"],
+        description:
+          "Practice sessions emphasize learning feedback, while exam sessions simulate pressure with timers, navigation, flagging, submission control, and session restoration.",
+        engineering:
+          "Answer persistence, local restoration handling, locked progression rules, backend session sync, and controlled timer-based exam states.",
+      },
+      {
+        name: "Realtime quiz challenges",
+        roles: ["Students"],
+        description:
+          "Quiz Arena supports solo play and live peer challenges with lobbies, invites, countdowns, live score updates, rankings, and rematch-capable game flow.",
+        engineering:
+          "Laravel Echo or Reverb-compatible private channels, REST-backed durable state, heartbeat recovery, reconnect handling, and server-owned phase transitions.",
+      },
+      {
+        name: "Analytics, resources, and profile management",
+        roles: ["Students"],
+        description:
+          "Students can review progress trends, study history, resources, and editable academic preferences inside one continuous learning workspace.",
+        engineering:
+          "Chart-based analytics UI, paginated history views, debounced resource search, reusable settings forms, and partially scaffolded resource integration.",
+      },
+    ],
+    outcomes: [
+      "Created a cohesive student learning experience that combines preparation, feedback, analytics, and competitive engagement.",
+      "Established reusable frontend patterns for API-heavy learning products with onboarding, session runtime, dashboards, and realtime interaction.",
+      "Delivered a strong active-build case study even before the broader admin and backend ecosystem is folded into the portfolio story.",
+    ],
+    talkingPoints: [
+      "Built a student dashboard that turns backend learning data into readiness, streaks, quests, and study-plan guidance.",
+      "Implemented guided practice sessions with feedback, hints, progression control, and session-summary behavior.",
+      "Built timed exam simulations with answer persistence, navigation, flags, timer expiry, and controlled submission.",
+      "Integrated realtime live quiz challenges using Echo or Reverb events, REST state, heartbeat recovery, and ranking screens.",
+      "Used React Query and Redux together to separate server cache from global authenticated user state.",
     ],
     links: [
       {
@@ -920,32 +1009,107 @@ export const projects = [
     ],
     caseStudy: {
       problem:
-        "Learning products need to make progress feel simple: learners should understand where they are, what to do next, and how the interface supports their study rhythm.",
+        "Students preparing for high-stakes exams often need more than access to questions. They need structure, motivation, progress visibility, and clearer guidance on what to practice next if they want preparation to feel sustainable and effective.",
       approach:
-        "Start with clear learner-facing flows and a frontend model that can later connect to curriculum, progress, assessment, and account data without forcing UI rewrites.",
+        "NoonPrep organizes the student experience into a public product surface and an authenticated learning workspace with onboarding, personalized dashboards, guided study flows, timed exam simulations, analytics, resources, and realtime quiz challenges. The frontend uses feature-first modules, typed API hooks, validated forms, and reusable state patterns to keep these learning flows connected.",
       decisions: [
         {
-          title: "Design clear learning flows",
+          title: "Use React Query for server state and Redux for auth state",
           description:
-            "The interface prioritizes what learners need to see, do, and understand during study sessions.",
+            "Dashboard data, session history, analytics, and quiz flows depend on cacheable API state, while authenticated user hydration needs predictable global access across the app.",
         },
         {
-          title: "Keep data boundaries understandable",
+          title: "Centralize API behavior in a shared Axios client",
           description:
-            "Project sections are organized around lessons, progress states, assessments, and learner actions.",
+            "Request headers, cookie-backed auth handling, mutation feedback, and typed feature APIs stay easier to manage when transport behavior is standardized.",
         },
         {
-          title: "Prioritize small-screen clarity",
+          title: "Model the app around feature-first product modules",
           description:
-            "The product direction assumes learners may interact from phones, so responsive hierarchy is treated as core product behavior.",
+            "Auth, dashboard, study arena, quiz arena, analytics, and resources each represent real user journeys, so grouping code by domain helps the product scale more cleanly.",
+        },
+        {
+          title: "Keep live challenge timing server-driven",
+          description:
+            "Competitive quiz fairness depends on shared backend phase control, so the frontend listens and reacts instead of independently advancing game state.",
+        },
+        {
+          title: "Use schema-validated forms for setup-heavy flows",
+          description:
+            "Study sessions, exam sessions, quizzes, auth, and profile updates all depend on structured payloads, so React Hook Form and Zod reduce invalid submissions and improve UX.",
+        },
+        {
+          title: "Invest in reusable loading, empty, and error states",
+          description:
+            "Because most product surfaces are API-backed, consistent fallback states are necessary for perceived quality and easier maintenance.",
         },
       ],
+      challenges: [
+        {
+          title: "Realtime reliability",
+          description:
+            "Live challenges require subscription handling, backend-owned phase changes, heartbeat recovery, disconnect tolerance, and reconnect-safe UI updates.",
+        },
+        {
+          title: "Session continuity",
+          description:
+            "Practice and exam flows benefit from local restoration after reloads, but that convenience has to stay aligned with backend session truth.",
+        },
+        {
+          title: "Partial feature maturity",
+          description:
+            "The resources surface is scaffolded well, but some visible resource data is still sample-backed, so the public case study needs to describe that honestly.",
+        },
+        {
+          title: "Ecosystem breadth beyond this repo",
+          description:
+            "The student app is already strong, but the complete NoonPrep product story will become fuller when the backend and admin or school-facing surfaces are added later.",
+        },
+      ],
+      outcome:
+        "The result is a portfolio-worthy student learning platform with multiple meaningful user flows, polished responsive UI, deep API integration, and unusually strong realtime interaction complexity for an active-build project.",
+      backendNote:
+        "This case study currently represents the student-facing frontend. It integrates with a separate backend for auth, study sessions, quiz state, analytics, resources, and realtime challenge behavior. A later pass can merge the admin and backend story into one broader platform case study.",
       privacyNote:
-        "The case study focuses on learner experience, workflow clarity, and frontend architecture without exposing private product details.",
+        "Public screenshots and notes should avoid real student names, emails, school codes, invite links, scores tied to real users, internal API URLs, tokens, and any private operational data.",
+      screenshots: [
+        {
+          label: "Landing page hero",
+          src: "/projects/noonprep/noonprep-landing-banner.png",
+          alt: "NoonPrep landing page preview",
+        },
+        {
+          label: "Student dashboard overview",
+        },
+        {
+          label: "Study Arena mode selection",
+        },
+        {
+          label: "Practice question screen with feedback",
+        },
+        {
+          label: "Exam session with timer and question navigator",
+        },
+        {
+          label: "Quiz Arena home",
+        },
+        {
+          label: "Live challenge lobby or active round",
+        },
+        {
+          label: "Analytics dashboard",
+        },
+        {
+          label: "Profile or settings surface",
+        },
+        {
+          label: "Mobile dashboard or sidebar state",
+        },
+      ],
       nextSteps: [
-        "Add polished learner-flow screenshots.",
-        "Document the main learning flows and content states.",
-        "Document one concrete engineering challenge from the build.",
+        "Add strong screenshots for the landing page, dashboard, Study Arena, live challenge flow, and analytics surfaces.",
+        "Later merge this frontend story with the admin and backend surfaces when they are stable enough for a fuller ecosystem case study.",
+        "Deepen the engineering narrative around practice setup and session-state architecture after the current implementation phase settles.",
       ],
     },
     featured: true,
@@ -1147,6 +1311,7 @@ export const projects = [
     featured: true,
   },
 ] as const satisfies readonly Project[];
+
 
 
 
