@@ -444,6 +444,226 @@ export const projects = [
     featured: true,
   },
   {
+    slug: "jooav-erp",
+    title: "JOOAV ERP",
+    kicker: "Retail operations and marketplace system",
+    summary:
+      "A two-surface ERP frontend that combines an internal operations dashboard with a wholesaler-facing marketplace for catalog management, draft ordering, checkout, procurement workflows, and inventory continuity.",
+    evidenceStatus: "active-build",
+    role: "Frontend Engineer / Product-Focused Frontend Developer",
+    timeframe: "Private / in progress",
+    projectType: "Frontend-heavy full-stack / multi-surface ERP frontend",
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "TanStack Query",
+      "Redux Toolkit",
+      "Axios",
+      "React Hook Form",
+      "Zod",
+      "Radix UI",
+      "shadcn/ui",
+      "Jest",
+      "Testing Library",
+    ],
+    impactAreas: [
+      "frontend-architecture",
+      "product-interface",
+      "workflow-design",
+      "backend-foundation",
+      "performance-accessibility",
+    ],
+    surfaces: [
+      "Admin operations dashboard",
+      "Super admin dashboard",
+      "Procurement officer dashboard",
+      "Wholesaler marketplace",
+      "Buyer checkout and payment flow",
+      "Inventory and reorder dashboard",
+    ],
+    highlights: [
+      "Built two connected product surfaces: an internal operations dashboard and a wholesaler-facing marketplace/order workflow.",
+      "Implemented catalog, order, procurement, payment, and inventory flows with role-aware UI and cache-aware API integration.",
+      "Used shared frontend patterns such as drawers, grouped tables, upload flows, validated forms, and status-driven dashboards across dense operational workflows.",
+    ],
+    features: [
+      {
+        name: "Role-aware admin operations",
+        roles: ["Super admins", "Admins", "Procurement officers"],
+        description:
+          "Internal users get focused dashboard tools for monitoring operations, managing users, verifying payments, and coordinating procurement activity.",
+        engineering:
+          "Protected admin layouts, permission-aware navigation, shared table patterns, operational modals, and API-backed dashboard modules.",
+      },
+      {
+        name: "Catalog and inventory management",
+        roles: ["Admins", "Procurement officers", "Wholesalers"],
+        description:
+          "Products, categories, pricing, stock state, media, and availability are managed through structured ERP interfaces.",
+        engineering:
+          "Typed forms, upload workflows, bulk import support, reusable CRUD patterns, and server-driven inventory state.",
+      },
+      {
+        name: "Order and procurement workflow",
+        roles: ["Admins", "Procurement officers"],
+        description:
+          "Orders can move from review into assignment and fulfillment-aware workflows without losing operational visibility.",
+        engineering:
+          "Status-driven tables, mutation flows, cache invalidation, assignment actions, and shared dashboard primitives for dense workflows.",
+      },
+      {
+        name: "Wholesaler marketplace experience",
+        roles: ["Customers", "Wholesalers"],
+        description:
+          "Buyers can browse inventory, build cart or draft orders, and continue through a restocking flow designed for repeat purchasing.",
+        engineering:
+          "Marketplace route modules, product and cart state coordination, draft-order persistence, and responsive catalog UI patterns.",
+      },
+      {
+        name: "Checkout, payment, and verification",
+        roles: ["Customers", "Wholesalers", "Admins"],
+        description:
+          "The buying flow supports checkout progression, payment-aware interfaces, and corresponding admin verification actions.",
+        engineering:
+          "Validated forms, API-backed checkout steps, status-aware order views, and integration boundaries for payment verification workflows.",
+      },
+      {
+        name: "Inventory continuity and reorder support",
+        roles: ["Wholesalers", "Procurement officers", "Admins"],
+        description:
+          "The product keeps restocking activity connected to available inventory and downstream operational decisions.",
+        engineering:
+          "Server-sourced inventory data, reorder-friendly workflow design, dashboard summaries, and coordinated admin/user state patterns.",
+      },
+    ],
+    outcomes: [
+      "Created one connected ERP story across internal operations and external buyer workflows.",
+      "Established reusable frontend structure for catalog, order, procurement, payment, and inventory modules.",
+      "Demonstrated product thinking across both ops control surfaces and buyer-facing commerce flows.",
+    ],
+    talkingPoints: [
+      "Built two complementary frontend surfaces that serve different roles inside one ERP ecosystem.",
+      "Used TanStack Query for server-backed data flows while Redux Toolkit handled session and workflow state that needed broader app access.",
+      "Designed the buyer experience around draft orders and repeat restocking rather than a generic e-commerce checkout alone.",
+      "Applied reusable admin UI patterns across product management, procurement, payments, and operational dashboards.",
+      "Connected both product surfaces through consistent API integration, validation, and dashboard architecture.",
+    ],
+    links: [],
+    caseStudy: {
+      problem:
+        "Retail and wholesale operations often split internal stock control, procurement coordination, order review, and buyer restocking into disconnected tools. That slows down operations and creates friction between the teams managing inventory and the people trying to place or fulfill orders.",
+      approach:
+        "JOOAV ERP is structured as two connected frontend surfaces: an internal dashboard for operational control and a marketplace experience for buyers and wholesalers. Both surfaces share integration patterns, validation systems, UI primitives, and product conventions while staying focused on the jobs each user type needs to complete.",
+      decisions: [
+        {
+          title: "Split the product into operational and buyer-facing surfaces",
+          description:
+            "The internal dashboard and the marketplace solve different problems, so separating them keeps each experience clearer while still supporting one broader ERP story.",
+        },
+        {
+          title: "Use feature-based frontend modules",
+          description:
+            "Catalog, orders, procurement, payments, users, and inventory all evolve independently, so modular feature boundaries make the codebase easier to scale.",
+        },
+        {
+          title: "Use TanStack Query for API-backed workflows",
+          description:
+            "Catalog data, order states, payment records, and inventory views all depend on server state, so query caching and mutation invalidation help keep dense workflows reliable.",
+        },
+        {
+          title: "Reserve Redux Toolkit for shared workflow state",
+          description:
+            "Session state, auth context, and cross-screen workflow state benefit from predictable global access without overloading every server-backed interaction into one store.",
+        },
+        {
+          title: "Centralize integration behavior through Axios utilities",
+          description:
+            "Authenticated requests, error handling, interceptors, and shared request patterns stay more maintainable when integration behavior is standardized.",
+        },
+        {
+          title: "Build reusable operational UI primitives",
+          description:
+            "Tables, grouped actions, drawers, upload flows, and validated forms repeat often in ERP products, so shared patterns improve consistency across both surfaces.",
+        },
+      ],
+      challenges: [
+        {
+          title: "Two-surface product complexity",
+          description:
+            "A marketplace flow and an admin dashboard can drift apart quickly, so the product needs consistent data contracts and reusable frontend standards to stay aligned.",
+        },
+        {
+          title: "API contract dependence",
+          description:
+            "Catalog, draft orders, procurement assignments, verification states, and inventory data all depend on backend shape and timing, so resilient loading and mutation handling matter a lot.",
+        },
+        {
+          title: "Order and payment lifecycle depth",
+          description:
+            "Operational systems need clearer state transitions than simpler brochure or content apps, so the UI has to expose status changes without overwhelming users.",
+        },
+        {
+          title: "Sensitive operational records",
+          description:
+            "Buyer details, inventory counts, payment verification data, procurement activity, and internal admin records need careful redaction in any public case study.",
+        },
+      ],
+      outcome:
+        "The result is a product-ready ERP frontend foundation that shows how one system can support both internal retail operations and buyer-facing restocking workflows without collapsing into a generic dashboard.",
+      backendNote:
+        "Both frontend surfaces integrate with dedicated backend services for authentication, users, catalog data, uploads, draft orders, checkout, payment verification, procurement assignments, fulfillment workflows, and inventory operations.",
+      privacyNote:
+        "Public screenshots and notes should avoid real customer details, addresses, order numbers, payment references, admin records, procurement activity, credentials, private API URLs, and sensitive internal operating rules.",
+      screenshots: [
+        {
+          label: "Marketplace landing page",
+          src: "/projects/jooav/jooav-marketplace-banner.png",
+          alt: "Jooav landing page preview",
+        },
+        {
+          label: "Marketplace product grid or category page",
+          src: "/projects/jooav/jooav-marketplace-banner.png",
+          alt: "Jooav product grid preview",
+        },
+        {
+          label: "Cart or draft order workflow",
+        },
+        {
+          label: "Checkout or payment verification view",
+        },
+        {
+          label: "Orders dashboard or order detail view",
+        },
+        {
+          label: "Inventory and reorder screen",
+        },
+        {
+          label: "Admin dashboard overview",
+        },
+        {
+          label: "Product or catalog management table",
+        },
+        {
+          label: "Order management or procurement assignment view",
+        },
+        {
+          label: "Bulk import or media upload workflow",
+        },
+        {
+          label: "Mobile dashboard or sidebar state",
+        },
+      ],
+      nextSteps: [
+        "Add the marketplace landing screenshot once it is ready.",
+        "Choose one buyer flow and one internal operations flow as the anchor visuals for the case study.",
+        "Pull deeper backend or API detail later if we want to extend the full-stack narrative beyond frontend integration.",
+      ],
+    },
+    featured: true,
+  },
+  {
     slug: "noonprep",
     title: "Noonprep",
     kicker: "Learning product experience",
@@ -562,3 +782,4 @@ export const projects = [
     featured: true,
   },
 ] as const satisfies readonly Project[];
+
