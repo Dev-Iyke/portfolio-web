@@ -1,25 +1,12 @@
 import type { Metadata } from "next";
-import { RouteShell } from "@/features/page-shell/components/RouteShell";
+import { AboutPageContent } from "@/features/about/components/AboutPageContent";
 
 export const metadata: Metadata = {
-  title: "About | DevIyke Labs",
+  title: "About",
   description:
-    "About Obasi Ikechukwu, a frontend-heavy full-stack developer building product interfaces with backend-aware thinking.",
+    "About Obasi Ikechukwu, a frontend-heavy full-stack developer who builds product interfaces with strong systems thinking and backend-aware discipline.",
 };
 
 export default function AboutPage() {
-  return (
-    <RouteShell
-      eyebrow="About"
-      title="The fuller story is being shaped around real work, not filler copy."
-      description="This page will cover my journey, working principles, strengths, and the direction I am taking as a frontend-heavy full-stack developer."
-      primaryHref="/work"
-      primaryLabel="View work instead"
-      notes={[
-        "A concise journey from frontend craft into deeper product and backend-aware engineering.",
-        "Working principles that show how I approach business logic, UI decisions, collaboration, and delivery.",
-        "A clearer picture of what I am looking for next and the teams I can help.",
-      ]}
-    />
-  );
+  return <AboutPageContent />;
 }

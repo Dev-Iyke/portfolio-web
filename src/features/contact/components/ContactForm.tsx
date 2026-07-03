@@ -93,14 +93,14 @@ export function ContactForm() {
     }
 
     if (isSuccess) {
-      return "Message received. The same form contract can point to the live backend when it is ready.";
+      return "Message received. I will review the context and respond with a clear next step.";
     }
 
     if (isError) {
       return "The request did not complete. Your message is still here, so you can try again.";
     }
 
-    return "All fields are required so the eventual backend contract stays clean and predictable.";
+    return "Share enough context to make the first response useful.";
   }, [isPending, isError, isSuccess]);
 
   async function onSubmit(values: ContactFormSchema) {
@@ -243,4 +243,5 @@ export function ContactForm() {
     </form>
   );
 }
+
 
