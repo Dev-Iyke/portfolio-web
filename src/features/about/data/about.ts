@@ -89,3 +89,78 @@ export const aboutCurrentDirection = {
     "Products that are ambitious enough to need structure, not just speed",
   ],
 } as const
+
+export const aboutTimeline = [
+  {
+    period: "Apr 2025 - Jul 2026",
+    title: "Frontend Web Developer",
+    organisation: "Hy-Initiative Limited",
+    summary:
+      "Built and evolved WESOnline and related institutional product surfaces, working across marketplace, mentorship, admin, performance improvements, and multilingual support.",
+    notes: [
+      "WESOnline marketplace and mentorship platform",
+      "Partner-facing product work across institutions",
+      "Performance improvement and multilingual interface support",
+    ],
+  },
+  {
+    period: "Mar 2026 - Jul 2026",
+    title: "Frontend Engineer",
+    organisation: "NoonPrep",
+    summary:
+      "Led frontend work on a student exam-preparation product with dashboards, guided practice, timed simulations, analytics, resources, and realtime quiz challenges.",
+    notes: [
+      "Student dashboard and learning workflows",
+      "Practice, exam, and quiz challenge surfaces",
+      "API integration and realtime challenge behavior",
+    ],
+  },
+  {
+    period: "Dec 2025 - Feb 2026",
+    title: "Frontend Developer",
+    organisation: "Uptick Talents Labs Limited",
+    summary:
+      "Worked on JOOAV ERP, connecting wholesalers and manufacturers through frontend order management, procurement flows, vendor accountability, and reporting-oriented dashboard systems.",
+    notes: [
+      "ERP and procurement workflows",
+      "Role-aware access patterns and responsive layouts",
+      "Inventory, order tracking, and dashboard reporting",
+    ],
+  },
+  {
+    period: "Feb 2025 - Mar 2026",
+    title: "Frontend Developer",
+    organisation: "M15 Innovations",
+    summary:
+      "Built Greysoft, a multi-tenant school management system with domain-based routing, role-specific dashboards, and realtime communication features.",
+    notes: [
+      "Multi-tenant architecture",
+      "Role-based authentication and dashboard systems",
+      "Realtime messaging and responsive cross-role UX",
+    ],
+  },
+  {
+    period: "Nov 2024 - Mar 2025",
+    title: "Frontend Developer Intern",
+    organisation: "Uptick Talents",
+    summary:
+      "Contributed to GetCassava, helping build a web marketplace experience for Ugandan farmers and strengthening responsive UI and product implementation foundations.",
+    notes: [
+      "Marketplace product implementation",
+      "Responsive layout delivery",
+      "Debugging and sprint-based frontend refinement",
+    ],
+  },
+  {
+    period: "2018 - 2024",
+    title: "B.Eng. Civil Engineering",
+    organisation: "Federal University of Technology, Owerri (FUTO)",
+    summary:
+      "Built the discipline behind structured problem solving while transitioning into software through self-learning, hands-on projects, and engineering training.",
+    notes: [
+      "Engineering foundation",
+      "Self-directed transition into frontend development",
+      "Hands-on product and project practice",
+    ],
+  },
+] as const
