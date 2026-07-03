@@ -77,7 +77,7 @@ export function AboutTimelineSection() {
                             <span
                               key={note}
                               className={cn(
-                                "rounded-full px-3 py-1.5 text-sm",
+                                "rounded-md lg:rounded-lg px-3 py-1.5 text-sm",
                                 noteIndex % 2 === 0
                                   ? "bg-signal/12 text-signal"
                                   : "bg-chart-3/12 text-chart-3",
