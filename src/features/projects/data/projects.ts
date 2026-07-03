@@ -215,6 +215,235 @@ export const projects = [
     featured: true,
   },
   {
+    slug: "wesonline-marketplace",
+    title: "WESOnline Marketplace",
+    kicker: "Multi-role learning platform",
+    summary:
+      "A multi-role learning platform frontend for courses, mentorship, assessments, projects, chat, rewards, and tenant-aware learning experiences.",
+    evidenceStatus: "active-build",
+    role: "Frontend Engineer / Product-Focused Frontend Developer",
+    timeframe: "Private / production-adjacent",
+    projectType: "Frontend-heavy full-stack / backend-integrated frontend",
+    stack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "React Router",
+      "Mantine",
+      "TanStack Query",
+      "Zustand",
+      "Axios",
+      "Zod",
+      "Socket.IO",
+      "Framer Motion",
+      "GSAP",
+    ],
+    impactAreas: [
+      "frontend-architecture",
+      "product-interface",
+      "workflow-design",
+      "backend-foundation",
+      "performance-accessibility",
+    ],
+    surfaces: [
+      "Public website",
+      "Student dashboard",
+      "Mentor dashboard",
+      "Admin dashboard",
+      "Assessment surface",
+      "Tenant and institution pages",
+    ],
+    highlights: [
+      "Built role-aware route architecture for student, mentor, admin, assessment, and public product surfaces.",
+      "Integrated multiple backend services with React Query, Axios, service-specific clients, and cache-aware dashboard workflows.",
+      "Supported multi-tenant branding and product bootstrap so tenant-specific experiences can share one frontend foundation.",
+    ],
+    features: [
+      {
+        name: "Authentication and onboarding",
+        roles: ["Students", "Mentors", "Admins", "SSO users"],
+        description:
+          "Handles account creation, OTP verification, social login, SSO, profile setup, account type selection, and role-aware onboarding flows.",
+        engineering:
+          "Protected auth routes, onboarding state, validation-heavy forms, token handling, and post-login navigation branching.",
+      },
+      {
+        name: "Student learning dashboard",
+        roles: ["Students", "Fellows"],
+        description:
+          "Gives learners access to courses, learning paths, assessments, mentorship, projects, events, rewards, chat, and settings.",
+        engineering:
+          "Protected route groups, reusable dashboard modules, API-backed lists, and session-aware navigation.",
+      },
+      {
+        name: "Mentor operations dashboard",
+        roles: ["Mentors", "Career Counselors"],
+        description:
+          "Lets mentors manage meeting sessions, appointments, learners, projects, tasks, grading, courses, rewards, and communication.",
+        engineering:
+          "Shared route structure, meeting flows, grading actions, project/task tools, and mentor-specific dashboard surfaces.",
+      },
+      {
+        name: "Admin operations dashboard",
+        roles: ["Admin users"],
+        description:
+          "Supports management of users, cohorts, groups, matching, courses, assessments, rewards, tenants, institutions, integrations, and analytics.",
+        engineering:
+          "Reusable admin data tables, status actions, filtered queries, pagination, bulk operations, and operational dashboards.",
+      },
+      {
+        name: "Assessments and job simulations",
+        roles: ["Students", "Admins"],
+        description:
+          "Supports assessment setup, question banks, assessment-taking flows, CSV operations, certificates, and job simulation workflows.",
+        engineering:
+          "Service-specific assessment APIs, validation-backed forms, result exports, and dedicated assessment routes.",
+      },
+      {
+        name: "Chat and notifications",
+        roles: ["Students", "Mentors"],
+        description:
+          "Adds direct messaging, notification panels, push permission flows, and live communication behavior.",
+        engineering:
+          "Socket.IO, shared chat components, infinite message pagination, notification hooks, and service worker support.",
+      },
+      {
+        name: "Tenant and institution management",
+        roles: ["Admins", "Tenants", "Public visitors"],
+        description:
+          "Supports tenant bootstrap, tenant branding, institution pages, cohorts, organizations, and integration-related screens.",
+        engineering:
+          "Tenant bootstrap, runtime branding, tenant-aware state, and route structures that support multiple organizations from one app.",
+      },
+    ],
+    outcomes: [
+      "Delivered a complex multi-role frontend that supports learners, mentors, admins, and tenant-specific experiences.",
+      "Improved maintainability through route-level separation, reusable operational components, and service-specific API clients.",
+      "Enabled platform workflows across courses, mentorship, projects, assessments, rewards, and real-time communication.",
+    ],
+    talkingPoints: [
+      "Built role-aware routing for student, mentor, admin, assessment, and public product surfaces.",
+      "Used React Query to manage paginated dashboards, mutations, cache invalidation, loading states, and filtered API views.",
+      "Created reusable operational UI patterns including tables, skeletons, modals, drawers, and status-driven actions.",
+      "Integrated Socket.IO, service worker support, and shared chat components for real-time communication.",
+      "Supported multi-tenant behavior through tenant bootstrap and runtime branding.",
+    ],
+    links: [{
+      label: "View Project",
+      kind: "live",
+      href: "https://app.wesonline.ng"
+    }],
+    caseStudy: {
+      problem:
+        "Learners need a guided digital learning environment, while mentors and administrators need structured operational tools to manage people, content, projects, sessions, assessments, and progress across one platform.",
+      approach:
+        "WESOnline organizes those workflows into public pages, authenticated dashboards, assessment routes, and tenant-aware experiences. The frontend separates product surfaces by role while sharing validation systems, API utilities, route modules, data-fetching patterns, and reusable operational UI.",
+      decisions: [
+        {
+          title: "Split the app into role-based route modules",
+          description:
+            "Public, auth, student, mentor, admin, assessment, and personalization flows each have different layouts and responsibilities, so route-level separation keeps the product easier to extend.",
+        },
+        {
+          title: "Use React Query for API-backed platform state",
+          description:
+            "The product depends on many dashboards and data-heavy flows, so React Query handles caching, invalidation, pagination, loading states, and filtered server data consistently.",
+        },
+        {
+          title: "Use Zustand for session and local workflow state",
+          description:
+            "Auth tokens, onboarding progress, drafts, tenant config, socket state, notifications, and task/project state are shared globally without introducing heavier global-state complexity.",
+        },
+        {
+          title: "Build reusable operational primitives",
+          description:
+            "Admin and dashboard surfaces repeat actions like view, edit, approve, reject, match, paginate, and filter, so shared primitives keep UX and implementation patterns aligned.",
+        },
+        {
+          title: "Bootstrap tenant configuration at runtime",
+          description:
+            "Tenant-aware branding and organization-specific experiences can be applied without duplicating the entire app for each institution or program.",
+        },
+        {
+          title: "Isolate integrations through service-specific API clients",
+          description:
+            "Main product APIs, microservices, chat services, and assessment services each have different request behavior, so dedicated clients keep integrations easier to manage.",
+        },
+      ],
+      challenges: [
+        {
+          title: "Multi-surface complexity",
+          description:
+            "Keeping public pages, student flows, mentor tools, admin workflows, tenant pages, and assessment routes in one repo improves reuse but increases architectural complexity.",
+        },
+        {
+          title: "API-heavy dependency graph",
+          description:
+            "Most features depend on external services, so the frontend needs stable API contracts, resilient loading/error handling, and clear service boundaries.",
+        },
+        {
+          title: "Auth edge cases",
+          description:
+            "OTP, email-only login, social login, SSO, 2FA, mentor approval states, and role-based redirects create many authentication and navigation branches.",
+        },
+        {
+          title: "Sensitive operational data",
+          description:
+            "User records, analytics, chat content, tenant data, and internal admin flows need careful redaction or demo data for any public case-study screenshots.",
+        },
+      ],
+      outcome:
+        "The result is a production-style frontend foundation for a multi-role learning platform, with reusable dashboard systems, tenant-aware configuration, backend-integrated workflows, and real-time communication support.",
+      backendNote:
+        "The frontend integrates with multiple backend services for authentication, users, courses, mentorship, projects, chat, assessments, rewards, tenants, institutions, and admin operations.",
+      privacyNote:
+        "Public screenshots and notes should use anonymized or demo data only. Names, emails, tenant data, analytics, chat content, admin records, tokens, API URLs, and sensitive operational details should not be shown.",
+      screenshots: [
+        {
+          label: "Public landing page",
+          src: "/projects/wesonline/wesonline-landing-banner.png",
+          alt: "WesOnline landing page preview",
+        },
+        {
+          label: "Student dashboard home",
+        },
+        {
+          label: "Learning path or course detail",
+        },
+        {
+          label: "Assessment or job simulation flow",
+        },
+        {
+          label: "Mentor project or task management",
+        },
+        {
+          label: "Mentor session or appointment page",
+        },
+        {
+          label: "Admin analytics dashboard",
+        },
+        {
+          label: "Admin user or course management",
+        },
+        {
+          label: "Chat interface",
+        },
+        {
+          label: "Rewards or badges page",
+        },
+        {
+          label: "Mobile public page or dashboard view",
+        },
+      ],
+      nextSteps: [
+        "Add polished screenshots for the strongest public, student, mentor, and admin surfaces.",
+        "Choose one course or assessment flow as the anchor visual story for the case study.",
+        "Analyze the backend/API repo later if we want to deepen the full-stack story beyond frontend integration.",
+      ],
+    },
+    featured: true,
+  },
+  {
     slug: "noonprep",
     title: "Noonprep",
     kicker: "Learning product experience",
@@ -263,59 +492,6 @@ export const projects = [
         "Add polished learner-flow screenshots.",
         "Document the main learning flows and content states.",
         "Document one concrete engineering challenge from the build.",
-      ],
-    },
-    featured: true,
-  },
-  {
-    slug: "wesonline-marketplace",
-    title: "WesOnline Marketplace",
-    kicker: "Named product platform",
-    summary:
-      "A product platform focused on structured workflows, reusable interface patterns, and API-connected user experiences.",
-    evidenceStatus: "active-build",
-    role: "Frontend-heavy full-stack developer",
-    timeframe: "Current",
-    stack: ["React", "TypeScript", "Tailwind CSS", "API-ready UI"],
-    impactAreas: [
-      "product-interface",
-      "frontend-architecture",
-      "backend-foundation",
-    ],
-    highlights: [
-      "Building reusable interface sections around the product workflows and user actions.",
-      "Organizing product screens around clear feature surfaces, roles, and integration points.",
-      "Keeping the public story grounded in verified product behavior and engineering work.",
-    ],
-    links: [],
-    caseStudy: {
-      problem:
-        "The product needs clear workflows, reusable interface patterns, and dependable API-connected screens.",
-      approach:
-        "The interface is organized around confirmed user flows, structured data, and reusable product sections.",
-      decisions: [
-        {
-          title: "Keep product framing accurate",
-          description:
-            "The product story is grounded in the real workflows, user roles, and technical decisions visible in the application.",
-        },
-        {
-          title: "Keep the interface model flexible",
-          description:
-            "The interface structure can support multiple surfaces, feature groups, outcomes, and integration details as the product grows.",
-        },
-        {
-          title: "Use conservative public storytelling",
-          description:
-            "The case study can explain decision-making without revealing sensitive business workflows or private implementation details.",
-        },
-      ],
-      privacyNote:
-        "Public notes will avoid confidential product logic and focus on confirmed UI architecture, data boundaries, and problem-solving approach.",
-      nextSteps: [
-        "Add the strongest confirmed feature flows.",
-        "Add polished screenshots for the main product surfaces.",
-        "Clarify the main product surfaces and user journeys.",
       ],
     },
     featured: true,
@@ -386,6 +562,3 @@ export const projects = [
     featured: true,
   },
 ] as const satisfies readonly Project[];
-
-
-
