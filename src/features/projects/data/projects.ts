@@ -1288,6 +1288,8 @@ export const projects = [
       screenshots: [
         {
           label: "Homepage hero and selected work flow",
+          src: "/projects/dev-iyke-labs/dev-iyke-labs-banner.png",
+          alt: "DevIyke labs landing page preview",
         },
         {
           label: "Project detail page layout",
