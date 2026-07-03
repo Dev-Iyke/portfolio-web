@@ -2,6 +2,7 @@ import { AboutDirectionSection } from "@/features/about/components/AboutDirectio
 import { AboutHeroSection } from "@/features/about/components/AboutHeroSection"
 import { AboutOperatingSection } from "@/features/about/components/AboutOperatingSection"
 import { AboutStrengthsSection } from "@/features/about/components/AboutStrengthsSection"
+import { AboutTimelineSection } from "@/features/about/components/AboutTimelineSection"
 
 export function AboutPageContent() {
   return (
@@ -9,6 +10,7 @@ export function AboutPageContent() {
       <AboutHeroSection />
       <AboutStrengthsSection />
       <AboutOperatingSection />
+      <AboutTimelineSection />
       <AboutDirectionSection />
     </main>
   )

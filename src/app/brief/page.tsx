@@ -1,25 +1,12 @@
 import type { Metadata } from "next";
-import { RouteShell } from "@/features/page-shell/components/RouteShell";
+import { RecruiterBriefPageContent } from "@/features/brief/components/RecruiterBriefPageContent";
 
 export const metadata: Metadata = {
-  title: "Recruiter Brief | DevIyke Labs",
+  title: "Recruiter Brief",
   description:
-    "A concise recruiter-facing summary for Obasi Ikechukwu's frontend-heavy full-stack profile.",
+    "A concise recruiter-facing summary of Obasi Ikechukwu's frontend-heavy full-stack profile, project evidence, stack, and role fit.",
 };
 
 export default function BriefPage() {
-  return (
-    <RouteShell
-      eyebrow="Recruiter brief"
-      title="A focused summary for quick evaluation."
-      description="A scannable view of my role, strengths, project evidence, stack, availability, and contact path for teams that need the short version first."
-      primaryHref="/contact"
-      primaryLabel="Start a conversation"
-      notes={[
-        "Frontend-heavy full-stack positioning with honest backend scope.",
-        "Selected project evidence, responsibilities, and technical strengths.",
-        "A recruiter-friendly structure without the noise of a full case study.",
-      ]}
-    />
-  );
+  return <RecruiterBriefPageContent />;
 }

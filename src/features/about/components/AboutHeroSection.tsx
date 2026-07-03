@@ -1,11 +1,10 @@
+import Image from "next/image"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 import { PageContainer } from "@/components/layout/PageContainer"
 import { Section } from "@/components/layout/Section"
 import { Reveal } from "@/components/motion/Reveal"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { aboutSnapshot } from "@/features/about/data/about"
 
 export function AboutHeroSection() {
   return (
@@ -19,7 +18,7 @@ export function AboutHeroSection() {
         aria-hidden="true"
       />
       <PageContainer>
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(19rem,0.85fr)] lg:gap-10">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(22rem,0.85fr)] lg:gap-10">
           <Reveal distance={16}>
             <div className="max-w-3xl">
               <p className="mb-4 font-mono text-xs font-medium tracking-[0.2em] text-muted-foreground uppercase">
@@ -66,33 +65,24 @@ export function AboutHeroSection() {
           </Reveal>
 
           <Reveal delay={0.08} distance={20}>
-            <Card className="h-full rounded-[1.8rem] border border-border/70 bg-card/75 py-0 shadow-sm">
-              <CardHeader className="border-b border-border/70 px-6 py-6">
-                <CardTitle className="text-xl">
-                  Snapshot of how I work
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="grid gap-4 px-6 py-6 sm:grid-cols-2 lg:grid-cols-1">
-                {aboutSnapshot.map((item, index) => (
-                  <div
-                    key={item.label}
-                    className="rounded-2xl border border-border/70 bg-surface/70 p-4"
-                  >
-                    <div className="flex items-center justify-between gap-3">
-                      <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-muted-foreground">
-                        {item.label}
-                      </p>
-                      <span className="font-mono text-[0.68rem] text-signal">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-                    <p className="mt-3 text-sm leading-6 text-foreground/85">
-                      {item.value}
-                    </p>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
+            <div className="relative min-h-[24rem] overflow-hidden rounded-[2rem] border border-border/70 bg-card/75 shadow-sm sm:min-h-[32rem] lg:min-h-[44rem]">
+              <Image
+                src="/images/iyke.jpeg"
+                alt="Portrait of Obasi Ikechukwu"
+                fill
+                className="object-cover object-top"
+                sizes="(min-width: 1024px) 32rem, 100vw"
+                priority
+              />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-black/60 via-black/18 to-transparent" />
+              <div className="absolute left-5 top-5 rounded-full border border-white/15 bg-black/35 px-3 py-1.5 font-mono text-[0.68rem] uppercase tracking-[0.16em] text-white/90 backdrop-blur-sm">
+                Frontend-heavy full-stack
+              </div>
+              <div className="absolute right-5 bottom-5 max-w-xs rounded-2xl border border-white/12 bg-black/30 px-4 py-3 text-sm leading-6 text-white/88 backdrop-blur-sm">
+                Building product interfaces with stronger systems thinking,
+                backend-aware discipline, and room for scale.
+              </div>
+            </div>
           </Reveal>
         </div>
       </PageContainer>
