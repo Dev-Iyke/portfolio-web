@@ -14,7 +14,7 @@ export function BlogDetailHero({ blog }: { blog: Blog }) {
   const bannerAlt = blog.bannerImage?.alt ?? `${blog.title} banner preview`;
 
   return (
-    <Section className="relative overflow-hidden pt-20 pb-0 sm:pt-24 lg:pt-28">
+    <Section className="relative overflow-hidden pt-20 pb-12 sm:pt-24 lg:pt-28">
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-border to-transparent"
         aria-hidden="true"
@@ -35,7 +35,7 @@ export function BlogDetailHero({ blog }: { blog: Blog }) {
             >
               {blog.format}
             </span>
-            <span className="rounded-full border border-border bg-surface px-3 py-1 font-mono text-[0.68rem] uppercase tracking-[0.12em] text-muted-foreground">
+            <span className="rounded-md border border-border bg-surface px-3 py-1 font-mono text-[0.68rem] uppercase tracking-[0.12em] text-muted-foreground">
               {blog.audience}
             </span>
             <span className="font-mono text-[0.72rem] uppercase tracking-[0.16em] text-muted-foreground">

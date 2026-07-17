@@ -9,7 +9,7 @@ import { labQuestions } from "@/features/lab/data/lab"
 
 export function LabQuestionsSection() {
   return (
-    <Section className="pt-0 pb-10 sm:pb-12 lg:pb-14">
+    <Section className="pt-6 pb-10 sm:pb-12 lg:pb-14">
       <PageContainer>
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start">
           <Reveal distance={16}>

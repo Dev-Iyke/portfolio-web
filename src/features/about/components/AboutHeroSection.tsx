@@ -1,10 +1,10 @@
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
-import { PageContainer } from "@/components/layout/PageContainer"
-import { Section } from "@/components/layout/Section"
-import { Reveal } from "@/components/motion/Reveal"
-import { Button } from "@/components/ui/button"
+﻿import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { PageContainer } from "@/components/layout/PageContainer";
+import { Section } from "@/components/layout/Section";
+import { Reveal } from "@/components/motion/Reveal";
+import { Button } from "@/components/ui/button";
 
 export function AboutHeroSection() {
   return (
@@ -25,25 +25,17 @@ export function AboutHeroSection() {
                 About
               </p>
               <h1 className="font-heading text-4xl leading-tight font-semibold tracking-[0.01em] text-balance sm:text-5xl lg:text-6xl">
-                I build product interfaces that make complex systems feel clear,
-                useful, and dependable.
+                I build software where interface quality, business logic, and system thinking meet.
               </h1>
               <div className="mt-6 space-y-4 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
                 <p>
-                  I am a frontend-heavy full-stack developer who enjoys working
-                  at the point where interface quality, business logic, and
-                  system thinking meet.
+                  I am a software engineer who enjoys working where interface quality, business logic, and system thinking meet.
                 </p>
                 <p>
-                  Most of my work has been frontend-led, but the way I approach
-                  products is already shaped by data flow, backend contracts,
-                  operational edge cases, and how the system will scale beyond
-                  the first release.
+                  Most of my professional experience has been frontend-focused, but my approach has always extended beyond the interface—thinking about backend contracts, data flow, operational edge cases, and how systems can evolve long after the first release.
                 </p>
                 <p>
-                  The goal is not just to make screens look good. It is to make
-                  ambitious products easier to use, easier to extend, and easier
-                  for teams to trust.
+                  The goal is not just to make screens look good. It is to make ambitious products easier to use, easier to extend, and easier for teams to trust.
                 </p>
               </div>
 
@@ -76,16 +68,15 @@ export function AboutHeroSection() {
               />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-black/60 via-black/18 to-transparent" />
               <div className="absolute left-5 top-5 rounded-full border border-white/15 bg-black/35 px-3 py-1.5 font-mono text-[0.68rem] uppercase tracking-[0.16em] text-white/90 backdrop-blur-sm">
-                Frontend-heavy full-stack
+                Software engineer
               </div>
               <div className="absolute right-5 bottom-5 max-w-xs rounded-2xl border border-white/12 bg-black/30 px-4 py-3 text-sm leading-6 text-white/88 backdrop-blur-sm">
-                Building product interfaces with stronger systems thinking,
-                backend-aware discipline, and room for scale.
+                Building software with thoughtful interfaces, dependable backend foundations, and room for scale.
               </div>
             </div>
           </Reveal>
         </div>
       </PageContainer>
     </Section>
-  )
+  );
 }

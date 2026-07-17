@@ -1,35 +1,25 @@
-import Link from "next/link"
-import { ArrowUpRight, Download } from "lucide-react"
-import { PageContainer } from "@/components/layout/PageContainer"
-import { Section } from "@/components/layout/Section"
-import { Reveal } from "@/components/motion/Reveal"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { aboutTimeline } from "@/features/about/data/about"
-import { getFeaturedProjects } from "@/features/projects/repositories/projectsRepository"
-import {
-  recruiterCoreStack,
-  recruiterCurrentFocus,
-  recruiterSnapshot,
-  recruiterStrengths,
-} from "@/features/brief/data/recruiterBrief"
+﻿"use client";
 
-const cvLinks = [
-  {
-    href: "/cv/Obasi-ikechukwu-FE.pdf",
-    label: "Download CV (PDF)",
-    download: "Obasi-Ikechukwu-Frontend-CV.pdf",
-  },
-  // {
-  //   href: "/cv/Obasi_Ikechukwu_Frontend_dev.docx",
-  //   label: "Download CV (DOCX)",
-  //   download: "Obasi-Ikechukwu-Frontend-CV.docx",
-  // },
-] as const
+import { useState } from "react";
+import Link from "next/link";
+import { ArrowUpRight, Download } from "lucide-react";
+import { PageContainer } from "@/components/layout/PageContainer";
+import { Section } from "@/components/layout/Section";
+import { Reveal } from "@/components/motion/Reveal";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { aboutTimeline } from "@/features/about/data/about";
+import {
+  recruiterTracks,
+  type RecruiterTrackKey,
+} from "@/features/brief/data/recruiterBrief";
+
+const trackKeys: RecruiterTrackKey[] = ["frontend", "backend"];
 
 export function RecruiterBriefPageContent() {
-  const projects = getFeaturedProjects()
-  const recentTimeline = aboutTimeline.slice(0, 4)
+  const [activeTrack, setActiveTrack] = useState<RecruiterTrackKey>("frontend");
+  const active = recruiterTracks[activeTrack];
+  const recentTimeline = aboutTimeline.slice(0, 4);
 
   return (
     <main id="main-content" className="flex-1">
@@ -49,22 +39,52 @@ export function RecruiterBriefPageContent() {
                 <p className="mb-4 font-mono text-xs font-medium tracking-[0.2em] text-muted-foreground uppercase">
                   Recruiter brief
                 </p>
-                <h1 className="font-heading text-4xl leading-tight font-semibold tracking-[0.01em] text-balance sm:text-5xl lg:text-6xl">
-                  Frontend-heavy full-stack developer building ambitious
-                  interfaces backed by dependable systems.
+
+                <div
+                  className="inline-flex rounded-full border border-border/70 bg-card/80 p-1"
+                  role="tablist"
+                  aria-label="Recruiter brief track selector"
+                >
+                  {trackKeys.map((trackKey) => {
+                    const track = recruiterTracks[trackKey];
+                    const isActive = activeTrack === trackKey;
+
+                    return (
+                      <button
+                        key={trackKey}
+                        type="button"
+                        role="tab"
+                        aria-selected={isActive}
+                        aria-controls={`brief-panel-${trackKey}`}
+                        id={`brief-tab-${trackKey}`}
+                        onClick={() => setActiveTrack(trackKey)}
+                        className={`cursor-pointer rounded-full px-4 py-2 text-sm transition-colors ${
+                          isActive
+                            ? "bg-background text-foreground shadow-md border"
+                            : "text-muted-foreground hover:text-foreground"
+                        }`}
+                      >
+                        {track.tabLabel}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                <p className="mt-6 font-mono text-[0.72rem] uppercase tracking-[0.16em] text-signal">
+                  {active.eyebrow}
+                </p>
+                <h1 className="mt-4 font-heading text-4xl leading-tight font-semibold tracking-[0.01em] text-balance sm:text-5xl lg:text-6xl">
+                  {active.title}
                 </h1>
-                <div className="mt-6 space-y-4 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-                  <p>
-                    I work best on product-facing engineering problems where the
-                    interface has to stay clear even when the workflows, backend
-                    dependencies, and user states get complex.
-                  </p>
-                  <p>
-                    My strongest work today is frontend-led, but the way I build
-                    already leans into backend-aware thinking: API contracts,
-                    validation, state boundaries, resilience, and systems that
-                    can keep growing well.
-                  </p>
+                <div
+                  id={`brief-panel-${activeTrack}`}
+                  role="tabpanel"
+                  aria-labelledby={`brief-tab-${activeTrack}`}
+                  className="mt-6 space-y-4 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
+                >
+                  {active.description.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
                 </div>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -84,7 +104,7 @@ export function RecruiterBriefPageContent() {
                       <ArrowUpRight data-icon="inline-end" aria-hidden="true" />
                     </a>
                   </Button>
-                  {cvLinks.map((item) => (
+                  {active.cvLinks.map((item) => (
                     <Button key={item.href} asChild variant="outline">
                       <a href={item.href} download={item.download}>
                         {item.label}
@@ -99,12 +119,10 @@ export function RecruiterBriefPageContent() {
             <Reveal delay={0.08} distance={20}>
               <Card className="h-full rounded-[1.8rem] border border-border/70 bg-card/75 py-0 shadow-sm">
                 <CardHeader className="border-b border-border/70 px-6 py-6">
-                  <CardTitle className="text-xl">
-                    Snapshot of how I work
-                  </CardTitle>
+                  <CardTitle className="text-xl">Snapshot of how I work</CardTitle>
                 </CardHeader>
                 <CardContent className="grid gap-4 px-6 py-6 sm:grid-cols-2 lg:grid-cols-1">
-                  {recruiterSnapshot.map((item, index) => (
+                  {active.snapshot.map((item, index) => (
                     <div
                       key={item.label}
                       className="rounded-2xl border border-border/70 bg-surface/70 p-4"
@@ -139,7 +157,7 @@ export function RecruiterBriefPageContent() {
                 </CardHeader>
                 <CardContent>
                   <ul className="grid gap-3">
-                    {recruiterStrengths.map((item) => (
+                    {active.strengths.map((item) => (
                       <li
                         key={item}
                         className="rounded-2xl border border-border/70 bg-surface/70 px-4 py-3 text-sm leading-6 text-foreground/85"
@@ -159,7 +177,7 @@ export function RecruiterBriefPageContent() {
                 </CardHeader>
                 <CardContent>
                   <ul className="grid gap-3">
-                    {recruiterCurrentFocus.map((item) => (
+                    {active.currentFocus.map((item) => (
                       <li
                         key={item}
                         className="rounded-2xl border border-border/70 bg-surface/70 px-4 py-3 text-sm leading-6 text-foreground/85"
@@ -183,51 +201,47 @@ export function RecruiterBriefPageContent() {
                 Selected evidence
               </p>
               <h2 className="font-heading text-3xl leading-tight font-semibold tracking-[0.01em] text-balance sm:text-4xl">
-                A few strong product stories that show the range of the work.
+                {active.evidenceLead}
               </h2>
             </div>
           </Reveal>
 
           <div className="mt-8 grid gap-5 lg:grid-cols-2">
-            {projects.map((project, index) => (
-              <Reveal key={project.slug} delay={0.06 * index} distance={18}>
+            {active.evidence.map((item, index) => (
+              <Reveal key={item.title} delay={0.06 * index} distance={18}>
                 <Card className="h-full rounded-[1.6rem] border border-border/70 bg-card/75 shadow-sm">
                   <CardHeader>
                     <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-signal">
-                      {project.kicker}
+                      {item.kicker}
                     </p>
-                    <CardTitle className="mt-3 text-2xl">
-                      {project.title}
-                    </CardTitle>
+                    <CardTitle className="mt-3 text-2xl">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <p className="text-sm leading-7 text-muted-foreground sm:text-base">
-                      {project.summary}
+                      {item.summary}
                     </p>
-                    {project.highlights?.[0] ? (
-                      <div className="rounded-2xl border border-border/70 bg-surface/70 p-4">
-                        <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-muted-foreground">
-                          Evidence
-                        </p>
-                        <p className="mt-3 text-sm leading-6 text-foreground/85">
-                          {project.highlights[0]}
-                        </p>
-                      </div>
+                    <div className="rounded-2xl border border-border/70 bg-surface/70 p-4">
+                      <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-muted-foreground">
+                        Evidence
+                      </p>
+                      <p className="mt-3 text-sm leading-6 text-foreground/85">
+                        {item.evidence}
+                      </p>
+                    </div>
+                    {"href" in item && item.href ? (
+                      <Button asChild variant="outline">
+                        <Link href={item.href}>
+                          Open case study
+                          <ArrowUpRight data-icon="inline-end" aria-hidden="true" />
+                        </Link>
+                      </Button>
                     ) : null}
-                    <Button asChild variant="outline">
-                      <Link href={`/work/${project.slug}`}>
-                        Open case study
-                        <ArrowUpRight
-                          data-icon="inline-end"
-                          aria-hidden="true"
-                        />
-                      </Link>
-                    </Button>
                   </CardContent>
                 </Card>
               </Reveal>
             ))}
           </div>
+
           <Reveal distance={16} className="mt-12">
             <Card className="rounded-[1.6rem] border border-border/70 bg-card/75 shadow-sm">
               <CardHeader>
@@ -235,7 +249,7 @@ export function RecruiterBriefPageContent() {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2.5">
-                  {recruiterCoreStack.map((item, index) => (
+                  {active.coreStack.map((item, index) => (
                     <span
                       key={item}
                       className={`rounded-full px-3 py-1.5 text-sm ${
@@ -307,3 +321,4 @@ export function RecruiterBriefPageContent() {
     </main>
   );
 }
+

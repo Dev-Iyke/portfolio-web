@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import {
   ArrowUpRight,
   BriefcaseBusiness,
@@ -20,13 +20,13 @@ const ctaLinks = [
   },
   {
     title: "Read the brief",
-    description: "A concise recruiter-facing summary will live here.",
+    description: "A recruiter-facing summary across frontend and backend tracks.",
     href: "/brief",
     icon: FileText,
   },
   {
     title: "Start a conversation",
-    description: "Reach out for frontend-heavy full-stack work or collaboration.",
+    description: "Reach out for software engineering roles or collaboration.",
     href: "/contact",
     icon: MessageSquare,
   },
@@ -61,12 +61,10 @@ export function HomeContactCtaSection() {
                   Next move
                 </p>
                 <h2 className="max-w-2xl font-heading text-3xl leading-tight font-semibold tracking-[0.01em] text-balance sm:text-4xl lg:text-5xl">
-                  Ready to build an interface that connects with a real system?
+                  Ready to build software that connects with a real system?
                 </h2>
                 <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-                  I&apos;m available for frontend-heavy full-stack roles, product
-                  interface work, and collaborations where thoughtful UI has to
-                  connect with business logic, APIs, and dependable workflows.
+                  I&apos;m available for software engineering roles, product interface work, and collaborations where thoughtful UX has to connect with business logic, APIs, and dependable workflows.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Button

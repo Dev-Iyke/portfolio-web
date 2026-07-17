@@ -6,7 +6,7 @@ import { labTracks } from "@/features/lab/data/lab"
 
 export function LabTracksSection() {
   return (
-    <Section className="pt-2 pb-6 sm:pb-8">
+    <Section className="">
       <PageContainer>
         <Reveal distance={16}>
           <div className="max-w-3xl">

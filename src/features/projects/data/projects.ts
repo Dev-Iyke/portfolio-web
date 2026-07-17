@@ -1,4 +1,4 @@
-import type { Project } from "@/features/projects/types/project";
+﻿import type { Project } from "@/features/projects/types/project";
 
 export const projects = [
   {
@@ -1312,8 +1312,158 @@ export const projects = [
     },
     featured: true,
   },
+  {
+    slug: "mini-mart",
+    title: "Mini Mart",
+    kicker: "Backend-focused practice project",
+    summary:
+      "A small e-commerce application built to strengthen backend fundamentals around REST APIs, JWT authentication, protected routes, product and user APIs, cart behavior, wishlist flows, and a dummy checkout journey.",
+    evidenceStatus: "experiment",
+    role: "Full-stack / Backend practice project",
+    timeframe: "Personal project",
+    projectType: "Backend-focused full-stack practice",
+    stack: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+      "REST APIs",
+      "JavaScript",
+      "Postman",
+    ],
+    impactAreas: [
+      "backend-foundation",
+      "workflow-design",
+      "product-interface",
+    ],
+    surfaces: [
+      "Authentication flows",
+      "Product catalog APIs",
+      "User management APIs",
+      "Cart and wishlist flows",
+      "Dummy checkout flow",
+    ],
+    highlights: [
+      "Built REST API foundations for product and user management with Node.js and Express.",
+      "Implemented JWT authentication and protected-route behavior for account-aware flows.",
+      "Modeled practical e-commerce workflows including cart, wishlist, and checkout-ready state transitions.",
+    ],
+    features: [
+      {
+        name: "JWT authentication and protected access",
+        roles: ["Users"],
+        description:
+          "Users can move through account-aware flows where protected actions depend on authenticated access.",
+        engineering:
+          "JWT-based authentication, protected route handling, request validation thinking, and separation between public and account-owned actions.",
+      },
+      {
+        name: "Product and user API foundations",
+        roles: ["Users", "System"],
+        description:
+          "The app exposes basic commerce data through API-driven product and user flows rather than static local-only UI state.",
+        engineering:
+          "Node.js and Express route structure, MongoDB-backed persistence, RESTful endpoint design, and Postman-driven API testing.",
+      },
+      {
+        name: "Cart and wishlist behavior",
+        roles: ["Users"],
+        description:
+          "Users can work with store-like actions such as saving products, building a cart, and moving through purchase preparation.",
+        engineering:
+          "User-owned state modeling, relationship boundaries between products and accounts, and state transitions that mirror practical e-commerce behavior.",
+      },
+      {
+        name: "Dummy checkout flow",
+        roles: ["Users"],
+        description:
+          "Checkout is represented as a safe practice flow so the project can exercise order-like movement without pretending to be a production payment system.",
+        engineering:
+          "Scoped checkout modeling, payload-shape discipline, and intentionally limited transaction behavior for a portfolio-safe backend practice project.",
+      },
+    ],
+    outcomes: [
+      "Created a practical backend-focused project for exercising authentication, API design, and e-commerce workflow modeling.",
+      "Strengthened Node.js, Express.js, MongoDB, JWT, REST API, and Postman fundamentals.",
+      "Added clearer backend evidence for junior backend and intern-role applications.",
+    ],
+    talkingPoints: [
+      "Built a small e-commerce backend around Node.js, Express.js, MongoDB, and JWT.",
+      "Practiced protected routes, account-aware flows, product and user API design, and cart or wishlist behavior.",
+      "Used the project as backend-focused evidence alongside production frontend and API integration experience.",
+    ],
+    links: [],
+    caseStudy: {
+      problem:
+        "Small commerce systems are useful backend practice because they force real product concerns into a manageable scope: authentication, product data, user-owned state, cart behavior, wishlist actions, and checkout boundaries.",
+      approach:
+        "Mini Mart models a compact store experience around REST APIs, JWT authentication, MongoDB persistence, protected routes, product and user endpoints, cart and wishlist flows, and a dummy checkout journey. The goal is not to overstate the project as a production marketplace, but to show practical backend foundations through a familiar product domain.",
+      decisions: [
+        {
+          title: "Use JWT authentication for account-aware flows",
+          description:
+            "Authentication gives the project a real backend boundary: some actions can stay public, while user-specific actions require protected access.",
+        },
+        {
+          title: "Keep the API RESTful and explicit",
+          description:
+            "Products, users, cart actions, wishlist actions, and checkout behavior are easier to reason about when the endpoint structure mirrors the product workflow.",
+        },
+        {
+          title: "Model commerce around user-owned state",
+          description:
+            "Cart and wishlist flows make the backend more meaningful because data belongs to a user and has to stay consistent across requests.",
+        },
+        {
+          title: "Scope checkout as a dummy flow",
+          description:
+            "The checkout flow supports learning around payloads and state transitions without claiming payment processing or production-grade transaction handling.",
+        },
+      ],
+      challenges: [
+        {
+          title: "Scope control",
+          description:
+            "The project is intentionally small, so the value comes from clear backend foundations instead of trying to simulate a full enterprise commerce platform.",
+        },
+        {
+          title: "Auth and state boundaries",
+          description:
+            "User-specific behavior needs careful separation from public product browsing so protected state does not leak into unauthenticated flows.",
+        },
+        {
+          title: "Practice project limits",
+          description:
+            "Because this is a personal backend practice project, the public case study should stay honest about what is implemented and avoid presenting it as production infrastructure.",
+        },
+      ],
+      outcome:
+        "Mini Mart gives the portfolio a direct backend-focused case study that complements stronger frontend-led projects with practical evidence of API design, authentication, persistence, and workflow modeling.",
+      backendNote:
+        "Mini Mart is represented as a backend-focused personal project rather than a production system. The public case study stays intentionally scoped to the confirmed CV details.",
+      privacyNote:
+        "Use sample data only. Do not expose tokens, credentials, database URLs, private environment values, or personal user data.",
+      screenshots: [
+        {
+          label: "Authentication and account flow",
+        },
+        {
+          label: "Product catalog or API-backed product list",
+        },
+        {
+          label: "Cart and wishlist flow",
+        },
+        {
+          label: "Dummy checkout state",
+        },
+      ],
+      nextSteps: [
+        "Add demo screenshots or API documentation snapshots when available.",
+        "Document the data model and endpoint boundaries more deeply if the backend repo is reviewed later.",
+        "Add repository or live demo links once a public-safe version is ready.",
+      ],
+    },
+    featured: false,
+  },
 ] as const satisfies readonly Project[];
-
-
-
 

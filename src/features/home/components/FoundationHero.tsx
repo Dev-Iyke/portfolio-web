@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Section } from "@/components/layout/Section";
@@ -25,19 +25,17 @@ export function FoundationHero() {
           </Reveal>
           <Reveal delay={heroSequence.eyebrow} distance={14}>
             <p className="mb-4 text-center font-mono text-xs font-medium tracking-[0.2em] text-muted-foreground uppercase sm:text-sm md:text-start">
-              Frontend-heavy full-stack developer
+              Software Engineer
             </p>
           </Reveal>
           <Reveal delay={heroSequence.headline} distance={22}>
             <h1 className="max-w-5xl text-center font-heading text-4xl leading-[1.1] font-semibold tracking-[0.015em] text-balance sm:text-5xl md:text-start md:text-6xl lg:text-7xl xl:text-8xl">
-              I build ambitious interfaces backed by dependable systems.
+              I build software that&apos;s intuitive on the surface and dependable underneath.
             </h1>
           </Reveal>
           <Reveal delay={heroSequence.description}>
             <p className="mt-7 max-w-2xl text-center text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8 md:text-start">
-              I&apos;m Obasi Ikechukwu. I turn product ideas into polished,
-              responsive experiences with React, Next.js, TypeScript, and a
-              growing full-stack toolkit.
+              I&apos;m Obasi Ikechukwu. I turn product ideas into reliable software through thoughtful frontend engineering, dependable backend foundations, and modern web technologies.
             </p>
           </Reveal>
           <Reveal

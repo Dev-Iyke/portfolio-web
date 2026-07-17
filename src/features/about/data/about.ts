@@ -1,7 +1,7 @@
-export const aboutSnapshot = [
+﻿export const aboutSnapshot = [
   {
     label: "Focus",
-    value: "Frontend-heavy full-stack product work",
+    value: "Software engineering across product interfaces and growing backend systems",
   },
   {
     label: "Strength",
@@ -9,11 +9,11 @@ export const aboutSnapshot = [
   },
   {
     label: "Current direction",
-    value: "Deeper backend systems alongside strong frontend delivery",
+    value: "Deeper backend systems alongside strong product delivery",
   },
   {
     label: "Working style",
-    value: "Structured, collaborative, and backend-aware",
+    value: "Structured, collaborative, and systems-aware",
   },
 ] as const
 
@@ -77,15 +77,15 @@ export const aboutOperatingPrinciples = [
 
 export const aboutCurrentDirection = {
   focusAreas: [
-    "Frontend architecture for products with real workflow depth",
-    "Backend-aware integration through typed services, cleaner data boundaries, and stronger delivery discipline",
-    "Dashboard systems, operational products, learning platforms, and interfaces with meaningful user state",
-    "Case-study quality work that can stand up in recruiter and engineering-manager conversations",
+    "Product-facing engineering with strong interface quality and clear workflows",
+    "Backend systems practice through Node.js, APIs, authentication, and stronger data boundaries",
+    "Dashboard systems, learning platforms, operational products, and full-stack applications",
+    "Software engineering work that can stand up in recruiter and engineering-manager conversations",
   ],
   bestFit: [
     "Teams that care about both product quality and implementation quality",
-    "Frontend or product-engineering roles where interface decisions and backend thinking overlap",
-    "Collaborative environments where ownership includes clarity, maintainability, and user experience",
+    "Frontend, product, or junior backend roles where interface decisions and backend thinking overlap",
+    "Collaborative environments where ownership includes clarity, maintainability, mentorship, and growth",
     "Products that are ambitious enough to need structure, not just speed",
   ],
 } as const
@@ -164,3 +164,4 @@ export const aboutTimeline = [
     ],
   },
 ] as const
+

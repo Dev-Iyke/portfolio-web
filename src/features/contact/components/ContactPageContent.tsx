@@ -1,4 +1,4 @@
-import { Mail, ShieldCheck, TimerReset } from "lucide-react";
+﻿import { Mail, ShieldCheck, TimerReset } from "lucide-react";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Section } from "@/components/layout/Section";
 import { Reveal } from "@/components/motion/Reveal";
@@ -46,13 +46,10 @@ export function ContactPageContent() {
                   Contact
                 </p>
                 <h1 className="max-w-4xl font-heading text-4xl leading-tight font-semibold tracking-[0.01em] text-balance sm:text-5xl lg:text-6xl">
-                  Start with the problem, and I&apos;ll meet you with the
-                  interface thinking.
+                  Start with the problem, and I&apos;ll meet you with product and systems thinking.
                 </h1>
                 <p className="mt-6 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-                  Reach out for frontend-heavy full-stack roles, product
-                  interface work, collaboration, or technical conversations
-                  around API-connected UI.
+                  Reach out for software engineering roles, frontend work, junior backend opportunities, collaboration, or technical conversations around product systems and API-connected applications.
                 </p>
               </div>
             </Reveal>
