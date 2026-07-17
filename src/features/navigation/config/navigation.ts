@@ -5,10 +5,10 @@
 
 export const navigationItems: NavigationItem[] = [
   { label: "Work", href: "/work" },
-  { label: "Blogs", href: "/blogs" },
   { label: "About", href: "/about" },
-  { label: "Lab", href: "/lab" },
   { label: "Brief", href: "/brief" },
+  { label: "Lab", href: "/lab" },
+  { label: "Blogs", href: "/blogs" },
 ];
 
 export function isActiveRoute(pathname: string, href: string) {
