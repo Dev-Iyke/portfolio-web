@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 export function Section({ className, ...props }: ComponentProps<"section">) {
   return (
     <section
-      className={cn("py-16 sm:py-20 lg:py-28", className)}
+      className={cn("py-16 sm:py-20", className)}
       {...props}
     />
   );
