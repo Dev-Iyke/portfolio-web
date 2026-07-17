@@ -15,7 +15,7 @@ const toneMap = {
 
 export function LabHeroSection() {
   return (
-    <Section className="relative overflow-hidden pt-20 pb-8 sm:pt-24 sm:pb-10 lg:pt-28">
+    <Section className="relative overflow-hidden pt-20 pb-2 sm:pt-24 sm:pb-4 lg:pt-28">
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-border to-transparent"
         aria-hidden="true"

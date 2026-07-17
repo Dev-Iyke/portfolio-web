@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -49,26 +49,26 @@ const recoleta = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://iyke.dev"),
   title: {
-    default: "Obasi Ikechukwu — Frontend-Heavy Full-Stack Developer",
+    default: "Obasi Ikechukwu — Software Engineer",
     template: "%s — Obasi Ikechukwu",
   },
   description:
-    "Frontend-heavy full-stack developer building ambitious interfaces backed by dependable systems.",
+    "Software engineer building ambitious products with dependable systems.",
   applicationName: "DevIyke Labs",
   authors: [{ name: "Obasi Ikechukwu" }],
   creator: "Obasi Ikechukwu",
   openGraph: {
     type: "website",
-    title: "Obasi Ikechukwu — Frontend-Heavy Full-Stack Developer",
+    title: "Obasi Ikechukwu — Software Engineer",
     description:
-      "Ambitious interfaces, dependable systems, and thoughtful product engineering.",
+      "Ambitious products, dependable systems, and thoughtful software engineering.",
     siteName: "DevIyke Labs",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Obasi Ikechukwu — Frontend-Heavy Full-Stack Developer",
+    title: "Obasi Ikechukwu — Software Engineer",
     description:
-      "Ambitious interfaces, dependable systems, and thoughtful product engineering.",
+      "Ambitious products, dependable systems, and thoughtful software engineering.",
   },
 };
 

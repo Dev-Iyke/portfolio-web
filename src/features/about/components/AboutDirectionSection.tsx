@@ -1,11 +1,11 @@
-import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
-import { PageContainer } from "@/components/layout/PageContainer"
-import { Section } from "@/components/layout/Section"
-import { Reveal } from "@/components/motion/Reveal"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { aboutCurrentDirection } from "@/features/about/data/about"
+﻿import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { PageContainer } from "@/components/layout/PageContainer";
+import { Section } from "@/components/layout/Section";
+import { Reveal } from "@/components/motion/Reveal";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { aboutCurrentDirection } from "@/features/about/data/about";
 
 export function AboutDirectionSection() {
   return (
@@ -17,14 +17,10 @@ export function AboutDirectionSection() {
               Current direction
             </p>
             <h2 className="font-heading text-3xl leading-tight font-semibold tracking-[0.01em] text-balance sm:text-4xl lg:text-5xl">
-              I am growing toward deeper full-stack ownership without losing my
-              frontend edge.
+              I am growing toward broader software ownership while keeping product quality high.
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
-              The short version is that I want to keep building strong frontend
-              products while getting closer to the backend systems, data
-              modeling, and integration decisions that make those products more
-              dependable.
+              The short version is that I want to keep building strong product interfaces while getting closer to the APIs, data models, services, and architecture decisions that make software more dependable.
             </p>
           </div>
         </Reveal>
@@ -79,13 +75,10 @@ export function AboutDirectionSection() {
                   Next step
                 </p>
                 <h3 className="mt-3 font-heading text-2xl font-semibold tracking-[0.01em] sm:text-3xl">
-                  If the work looks aligned, the best next move is a real
-                  conversation.
+                  If the work looks aligned, the best next move is a real conversation.
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
-                  I am especially interested in product-facing engineering work
-                  where interface craft, systems thinking, and strong execution
-                  all matter.
+                  I am especially interested in software engineering work where product quality, systems thinking, and strong execution all matter.
                 </p>
               </div>
 
@@ -108,5 +101,5 @@ export function AboutDirectionSection() {
         </Reveal>
       </PageContainer>
     </Section>
-  )
+  );
 }

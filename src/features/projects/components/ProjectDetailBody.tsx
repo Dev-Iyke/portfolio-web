@@ -14,7 +14,7 @@ export function ProjectDetailBody({ project }: { project: Project }) {
   return (
     <Section className="pt-0 mt-12 lg:mt-0">
       <PageContainer>
-        <div className="grid gap-6 md:gap-8 lg:gap-10">
+        <div className="grid gap-16 md:gap-12 lg:gap-10">
           <Reveal distance={16}>
             <ProjectContext project={project} />
           </Reveal>
