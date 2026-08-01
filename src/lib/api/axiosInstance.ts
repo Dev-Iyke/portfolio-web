@@ -11,16 +11,17 @@ import { showToast } from "@/lib/toast";
 
 interface ApiErrorResponse {
   error?: string;
-  message?: string;
+  message?: string | string[];
+  statusCode?: number
 }
 
 export interface ApiRequestConfig<D = unknown> extends AxiosRequestConfig<D> {
   noAuth?: boolean;
   noToast?: boolean;
-  successMessage?: string;
-  errorMessage?: string;
-  successTitle?: string;
-  errorTitle?: string;
+  // successMessage?: string;
+  // errorMessage?: string;
+  // successTitle?: string;
+  // errorTitle?: string;
 }
 
 type InternalApiRequestConfig<D = unknown> = InternalAxiosRequestConfig<D> &
@@ -34,7 +35,7 @@ const axiosInstance: AxiosInstance = axios.create({
     "Content-Type": "application/json",
   },
   timeout: 30000,
-  withCredentials: true,
+  withCredentials: false,
 });
 
 function isMutationMethod(method?: string) {
@@ -43,11 +44,14 @@ function isMutationMethod(method?: string) {
     : false;
 }
 
-export function getApiErrorMessage(error: AxiosError<ApiErrorResponse>) {
+export function getApiErrorMessage(errorRes: AxiosError<ApiErrorResponse>) {
+  const errorData = errorRes.response?.data
+  const message = Array.isArray(errorData?.message)
+    ? errorData.message[0]
+    : errorData?.message;
   return (
-    error.response?.data?.message ||
-    error.response?.data?.error ||
-    error.message ||
+    message ||
+    errorData?.error ||
     "Something went wrong. Please try again."
   );
 }
@@ -68,17 +72,15 @@ axiosInstance.interceptors.request.use(
 );
 
 axiosInstance.interceptors.response.use(
-  (response: AxiosResponse) => {
+  (response: AxiosResponse<{ success: boolean; message: string}>) => {
     const config = response.config as InternalApiRequestConfig;
     const shouldToast = isMutationMethod(config.method) && !config.noToast;
+    const message = response?.data?.message
 
     if (shouldToast) {
       showToast({
-        title: config.successTitle || "Success",
-        description:
-          config.successMessage ||
-          response.data?.message ||
-          "Operation completed successfully.",
+        title: "Success",
+        description: message || "Operation completed successfully.",
         variant: "success",
       });
     }
@@ -91,8 +93,8 @@ axiosInstance.interceptors.response.use(
 
     if (shouldToast) {
       showToast({
-        title: config?.errorTitle || "Request failed",
-        description: config?.errorMessage || getApiErrorMessage(error),
+        title: "Request failed",
+        description: getApiErrorMessage(error),
         variant: "error",
       });
     }

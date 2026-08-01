@@ -7,52 +7,16 @@ import type {
   ContactMessagePayload,
   ContactMessageResponse,
 } from "@/features/contact/types/contact";
+import { MutationResponse } from "@/lib/api/queryTypes";
 
-const contactEndpoint =
-  process.env.NEXT_PUBLIC_CONTACT_ENDPOINT || "/v1/contact";
-
-const shouldUseMockContactApi =
-  process.env.NEXT_PUBLIC_CONTACT_API_MODE !== "live";
-
-function wait(ms: number) {
-  return new Promise((resolve) => {
-    globalThis.setTimeout(resolve, ms);
-  });
-}
+const contactEndpoint = `/v1/contact-submissions`;
 
 export async function submitContactMessage(
   payload: ContactMessagePayload,
-): Promise<ContactMessageResponse> {
-  if (shouldUseMockContactApi) {
-    await wait(850);
-
-    const response = {
-      message:
-        "Message received. I will review the context and respond with a clear next step.",
-      receivedAt: new Date().toISOString(),
-      referenceId: `mock-${Date.now()}`,
-    };
-
-    showToast({
-      title: "Message received",
-      description: response.message,
-      variant: "success",
-    });
-
-    return response;
-  }
-
-  const response = await api.post<ContactMessageResponse, ContactMessagePayload>(
+): Promise<MutationResponse<ContactMessageResponse>> {
+  const response = await api.post<MutationResponse<ContactMessageResponse>, ContactMessagePayload>(
     contactEndpoint,
     payload,
-    {
-      errorMessage:
-        "Please check your details and try again. Your message is still here.",
-      errorTitle: "Message not sent",
-      noAuth: true,
-      successMessage: "I will review it and respond clearly.",
-      successTitle: "Message received",
-    } satisfies ApiRequestConfig<ContactMessagePayload>,
   );
 
   return response.data;

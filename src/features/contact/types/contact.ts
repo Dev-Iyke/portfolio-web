@@ -4,19 +4,14 @@ export type ContactInquiryType =
   | "technical-discussion"
   | "other";
 
-export interface ContactFormValues {
+export interface ContactMessagePayload {
   name: string;
   email: string;
-  inquiryType: ContactInquiryType;
+  subject: ContactInquiryType;
   message: string;
-}
-
-export interface ContactMessagePayload extends ContactFormValues {
-  source: "portfolio";
 }
 
 export interface ContactMessageResponse {
-  message: string;
-  receivedAt?: string;
-  referenceId?: string;
+  id: string;
+  createdAt?: string;
 }

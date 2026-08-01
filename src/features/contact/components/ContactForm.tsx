@@ -105,10 +105,12 @@ export function ContactForm() {
 
   async function onSubmit(values: ContactFormSchema) {
     try {
-      await sendContactMessage({
-        ...values,
-        source: "portfolio",
+      const {inquiryType, ...rest} = values
+      const res = await sendContactMessage({
+        ...rest,
+        subject: inquiryType,
       });
+      console.log(res)
       reset(defaultValues);
     } catch {
       // Toasts and inline status are handled by the API/interceptor layer.
