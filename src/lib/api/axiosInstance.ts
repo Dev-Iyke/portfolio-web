@@ -27,7 +27,7 @@ export interface ApiRequestConfig<D = unknown> extends AxiosRequestConfig<D> {
 type InternalApiRequestConfig<D = unknown> = InternalAxiosRequestConfig<D> &
   ApiRequestConfig<D>;
 
-const apiBaseUrl = process.env.NEXT_PUBLIC_LOCAL_API_BASE_URL;
+const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 const axiosInstance: AxiosInstance = axios.create({
   baseURL: apiBaseUrl,
