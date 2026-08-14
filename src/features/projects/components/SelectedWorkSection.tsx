@@ -1,14 +1,27 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Section } from "@/components/layout/Section";
 import { Reveal } from "@/components/motion/Reveal";
+import { ProjectCardSkeleton } from "@/components/skeletons/projects/ProjectsPageSkeleton";
+import { ContentState } from "@/components/states/ContentState";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/features/projects/components/ProjectCard";
-import { getFeaturedProjects } from "@/features/projects/repositories/projectsRepository";
+import { useGetAllProjects } from "@/features/projects/services/projects.api";
+
+const featuredProjectPlaceholders = Array.from({ length: 4 });
 
 export function SelectedWorkSection() {
-  const projects = getFeaturedProjects();
+  const {
+    data: projects,
+    isError,
+    isFetching,
+    isPending,
+    refetch,
+  } = useGetAllProjects();
+  const featuredProjects = projects?.slice(0, 4);
 
   return (
     <Section id="selected-work" className="relative overflow-hidden pt-10">
@@ -45,18 +58,54 @@ export function SelectedWorkSection() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-2">
-          {projects.map((project, index) => (
-            <Reveal
-              key={project.slug}
-              delay={0.08 * index}
-              distance={20}
-              className="min-h-full"
-            >
-              <ProjectCard project={project} />
-            </Reveal>
-          ))}
-        </div>
+        {isPending ? (
+          <div
+            className="mt-12 grid gap-5 lg:grid-cols-2"
+            aria-busy="true"
+            aria-label="Loading selected projects"
+          >
+            <p className="sr-only">Loading selected project case studies.</p>
+            {featuredProjectPlaceholders.map((_, index) => (
+              <ProjectCardSkeleton key={index} />
+            ))}
+          </div>
+        ) : isError ? (
+          <div className="mt-12">
+            <ContentState
+              variant="error"
+              eyebrow="Connection interrupted"
+              title="Selected work could not be loaded."
+              description="The project service did not respond. Try loading these case studies again."
+              action={{
+                label: "Try again",
+                loading: isFetching,
+                onClick: () => void refetch(),
+              }}
+            />
+          </div>
+        ) : !featuredProjects?.length ? (
+          <div className="mt-12">
+            <ContentState
+              eyebrow="Selected work"
+              title="No featured case studies are available yet."
+              description="Published project stories will appear here as the archive grows."
+              action={{ href: "/contact", label: "Start a conversation" }}
+            />
+          </div>
+        ) : (
+          <div className="mt-12 grid gap-5 lg:grid-cols-2">
+            {featuredProjects.map((project, index) => (
+              <Reveal
+                key={project.slug}
+                delay={0.08 * index}
+                distance={20}
+                className="min-h-full"
+              >
+                <ProjectCard project={project} />
+              </Reveal>
+            ))}
+          </div>
+        )}
       </PageContainer>
     </Section>
   );
