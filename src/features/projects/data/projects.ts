@@ -1,4 +1,4 @@
-﻿import type { Project } from "@/features/projects/types/project";
+import type { Project } from "@/features/projects/types/project";
 
 export const projects = [
   {
@@ -7,7 +7,7 @@ export const projects = [
     kicker: "Multi-tenant school SaaS",
     summary:
       "A multi-tenant school management platform with role-based dashboards for school operations, academics, exams, payments, messaging, applicant onboarding, and Greysoft platform administration.",
-    evidenceStatus: "shipped",
+    evidenceStatus: "SHIPPED",
     role: "Lead Frontend Engineer / Full-stack Integration Engineer",
     timeframe: "private  / production-adjacent",
     projectType: "Frontend-heavy full-stack",
@@ -25,11 +25,11 @@ export const projects = [
       "Cloudinary",
     ],
     impactAreas: [
-      "frontend-architecture",
-      "product-interface",
-      "workflow-design",
-      "backend-foundation",
-      "performance-accessibility",
+      "FRONTEND_ARCHITECTURE",
+      "PRODUCT_INTERFACE",
+      "WORKFLOW_DESIGN",
+      "BACKEND_FOUNDATION",
+      "PERFORMANCE_ACCESSIBILITY",
     ],
     surfaces: [
       "Public site",
@@ -226,7 +226,7 @@ export const projects = [
     kicker: "Multi-role learning platform",
     summary:
       "A multi-role learning platform frontend for courses, mentorship, assessments, projects, chat, rewards, and tenant-aware learning experiences.",
-    evidenceStatus: "active-build",
+    evidenceStatus: "ACTIVE_BUILD",
     role: "Frontend Engineer / Product-Focused Frontend Developer",
     timeframe: "Private / production-adjacent",
     projectType: "Frontend-heavy full-stack / backend-integrated frontend",
@@ -245,11 +245,11 @@ export const projects = [
       "GSAP",
     ],
     impactAreas: [
-      "frontend-architecture",
-      "product-interface",
-      "workflow-design",
-      "backend-foundation",
-      "performance-accessibility",
+      "FRONTEND_ARCHITECTURE",
+      "PRODUCT_INTERFACE",
+      "WORKFLOW_DESIGN",
+      "BACKEND_FOUNDATION",
+      "PERFORMANCE_ACCESSIBILITY",
     ],
     surfaces: [
       "Public website",
@@ -455,7 +455,7 @@ export const projects = [
     kicker: "Retail operations and marketplace system",
     summary:
       "A two-surface ERP frontend that combines an internal operations dashboard with a wholesaler-facing marketplace for catalog management, draft ordering, checkout, procurement workflows, and inventory continuity.",
-    evidenceStatus: "shipped",
+    evidenceStatus: "SHIPPED",
     role: "Sole Frontend Engineer",
     timeframe: "Private / 4 Months",
     projectType: "Frontend-heavy full-stack / multi-surface ERP frontend",
@@ -475,11 +475,11 @@ export const projects = [
       "Testing Library",
     ],
     impactAreas: [
-      "frontend-architecture",
-      "product-interface",
-      "workflow-design",
-      "backend-foundation",
-      "performance-accessibility",
+      "FRONTEND_ARCHITECTURE",
+      "PRODUCT_INTERFACE",
+      "WORKFLOW_DESIGN",
+      "BACKEND_FOUNDATION",
+      "PERFORMANCE_ACCESSIBILITY",
     ],
     surfaces: [
       "Admin operations dashboard",
@@ -681,7 +681,7 @@ export const projects = [
     kicker: "Multi-role agricultural marketplace",
     summary:
       "A multi-role cassava marketplace frontend that connects buyers, farmers or vendors in Uganda, to administrators through product discovery, ordering, payment flows, vendor operations, and marketplace management dashboards.",
-    evidenceStatus: "shipped",
+    evidenceStatus: "SHIPPED",
     role: "Frontend Engineer / Product-Focused Frontend Developer",
     timeframe: "Private / 4 Months",
     projectType: "Frontend Development",
@@ -701,11 +701,11 @@ export const projects = [
       "XLSX",
     ],
     impactAreas: [
-      "frontend-architecture",
-      "product-interface",
-      "workflow-design",
-      "backend-foundation",
-      "performance-accessibility",
+      "FRONTEND_ARCHITECTURE",
+      "PRODUCT_INTERFACE",
+      "WORKFLOW_DESIGN",
+      "BACKEND_FOUNDATION",
+      "PERFORMANCE_ACCESSIBILITY",
     ],
     surfaces: [
       "Public storefront",
@@ -897,7 +897,7 @@ export const projects = [
     kicker: "Student exam-preparation platform",
     summary:
       "A student-focused exam preparation and simulation platform with personalized dashboards, guided practice, timed exam simulations, analytics, resources, and realtime quiz challenges.",
-    evidenceStatus: "active-build",
+    evidenceStatus: "ACTIVE_BUILD",
     role: "Frontend Engineer",
     timeframe: "Private / in progress",
     projectType: "Frontend-heavy full-stack",
@@ -915,11 +915,11 @@ export const projects = [
       "Recharts",
     ],
     impactAreas: [
-      "frontend-architecture",
-      "product-interface",
-      "workflow-design",
-      "backend-foundation",
-      "performance-accessibility",
+      "FRONTEND_ARCHITECTURE",
+      "PRODUCT_INTERFACE",
+      "WORKFLOW_DESIGN",
+      "BACKEND_FOUNDATION",
+      "PERFORMANCE_ACCESSIBILITY",
     ],
     surfaces: [
       "Public landing site",
@@ -1120,7 +1120,7 @@ export const projects = [
     kicker: "Portfolio system and case-study engine",
     summary:
       "A dark-first portfolio product built to present frontend craft, structured case studies, polished interaction design, and a backend-ready content architecture in one cohesive experience.",
-    evidenceStatus: "active-build",
+    evidenceStatus: "ACTIVE_BUILD",
     role: "Product engineer and owner",
     timeframe: "2026",
     projectType: "Frontend-heavy full-stack / personal product system",
@@ -1139,11 +1139,11 @@ export const projects = [
       "next-themes",
     ],
     impactAreas: [
-      "frontend-architecture",
-      "product-interface",
-      "workflow-design",
-      "performance-accessibility",
-      "backend-foundation",
+      "FRONTEND_ARCHITECTURE",
+      "PRODUCT_INTERFACE",
+      "WORKFLOW_DESIGN",
+      "PERFORMANCE_ACCESSIBILITY",
+      "BACKEND_FOUNDATION",
     ],
     surfaces: [
       "Narrative homepage",
@@ -1318,7 +1318,7 @@ export const projects = [
     kicker: "Backend-focused practice project",
     summary:
       "A small e-commerce application built to strengthen backend fundamentals around REST APIs, JWT authentication, protected routes, product and user APIs, cart behavior, wishlist flows, and a dummy checkout journey.",
-    evidenceStatus: "experiment",
+    evidenceStatus: "EXPERIMENT",
     role: "Full-stack / Backend practice project",
     timeframe: "Personal project",
     projectType: "Backend-focused full-stack practice",
@@ -1332,9 +1332,9 @@ export const projects = [
       "Postman",
     ],
     impactAreas: [
-      "backend-foundation",
-      "workflow-design",
-      "product-interface",
+      "BACKEND_FOUNDATION",
+      "WORKFLOW_DESIGN",
+      "PRODUCT_INTERFACE",
     ],
     surfaces: [
       "Authentication flows",
