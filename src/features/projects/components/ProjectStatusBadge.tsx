@@ -2,9 +2,9 @@ import { Badge } from "@/components/ui/badge";
 import type { ProjectEvidenceStatus } from "@/features/projects/types/project";
 
 const statusLabel: Record<ProjectEvidenceStatus, string> = {
-  shipped: "Shipped",
-  "active-build": "Active build",
-  experiment: "Experiment",
+  "SHIPPED": "Shipped",
+  "ACTIVE_BUILD": "Active build",
+  "EXPERIMENT": "Experiment",
 };
 
 export function ProjectStatusBadge({
