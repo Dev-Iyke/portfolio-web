@@ -15,7 +15,7 @@ export function WorkIndexGrid() {
     isFetching,
     isPending,
     refetch,
-  } = useGetAllProjects();
+  } = useGetAllProjects({});
 
   if (isPending) {
     return <ProjectsBodySkeleton />;

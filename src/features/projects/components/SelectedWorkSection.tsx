@@ -15,13 +15,12 @@ const featuredProjectPlaceholders = Array.from({ length: 4 });
 
 export function SelectedWorkSection() {
   const {
-    data: projects,
+    data: featuredProjects,
     isError,
     isFetching,
     isPending,
     refetch,
-  } = useGetAllProjects();
-  const featuredProjects = projects?.slice(0, 4);
+  } = useGetAllProjects({isFeatured: true});
 
   return (
     <Section id="selected-work" className="relative overflow-hidden pt-10">

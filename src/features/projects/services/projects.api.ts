@@ -5,17 +5,14 @@ import type { QueryResponse } from "@/lib/api/queryTypes";
 
 const projectsEndpoint = "/v1/projects";
 
-export const projectQueryKeys = {
-  all: ["projects"] as const,
-  detail: (slug: string) => ["projects", "detail", slug] as const,
-};
-
-export const useGetAllProjects = () => {
+export const useGetAllProjects = ({isFeatured}: {isFeatured?: boolean}) => {
   return useQuery({
-    queryKey: projectQueryKeys.all,
+    queryKey: ["all-projects", isFeatured],
     queryFn: async () => {
+      const filterParams = new URLSearchParams({})
+      if(isFeatured) filterParams.append("featured", "true")
       const response = await api.get<QueryResponse<Project[]>>(
-        projectsEndpoint,
+        `${projectsEndpoint}?${filterParams}`,
         { noToast: true },
       );
       return response.data.data;
@@ -25,7 +22,7 @@ export const useGetAllProjects = () => {
 
 export const useGetProjectBySlug = ({ slug }: { slug: string }) => {
   return useQuery({
-    queryKey: projectQueryKeys.detail(slug),
+    queryKey: ["project-details", slug],
     queryFn: async () => {
       const response = await api.get<QueryResponse<Project>>(
         `${projectsEndpoint}/${encodeURIComponent(slug)}`,
