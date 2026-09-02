@@ -1,6 +1,6 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Section } from "@/components/layout/Section";
 import { Reveal } from "@/components/motion/Reveal";
@@ -25,17 +25,25 @@ export function AboutHeroSection() {
                 About
               </p>
               <h1 className="font-heading text-4xl leading-tight font-semibold tracking-[0.01em] text-balance sm:text-5xl lg:text-6xl">
-                I build software where interface quality, business logic, and system thinking meet.
+                I build software where interface quality, business logic, and
+                system thinking meet.
               </h1>
               <div className="mt-6 space-y-4 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
                 <p>
-                  I am a software engineer who enjoys working where interface quality, business logic, and system thinking meet.
+                  I am a software engineer who enjoys working where interface
+                  quality, business logic, and system thinking meet.
                 </p>
                 <p>
-                  Most of my professional experience has been frontend-focused, but my approach has always extended beyond the interface—thinking about backend contracts, data flow, operational edge cases, and how systems can evolve long after the first release.
+                  Most of my professional experience has been frontend-focused,
+                  but my approach has always extended beyond the
+                  interface—thinking about backend contracts, data flow,
+                  operational edge cases, and how systems can evolve long after
+                  the first release.
                 </p>
                 <p>
-                  The goal is not just to make screens look good. It is to make ambitious products easier to use, easier to extend, and easier for teams to trust.
+                  The goal is not just to make screens look good. It is to make
+                  ambitious products easier to use, easier to extend, and easier
+                  for teams to trust.
                 </p>
               </div>
 
@@ -51,6 +59,15 @@ export function AboutHeroSection() {
                     Start a conversation
                     <ArrowUpRight data-icon="inline-end" aria-hidden="true" />
                   </Link>
+                </Button>
+                <Button asChild variant="outline">
+                  <a
+                    href={"/cv/Obasi-Ikechukwu-Software-Engineer.pdf"}
+                    download={"Obasi-Ikechukwu-Software-Engineer-CV.pdf"}
+                  >
+                    {"Download CV (PDF)"}
+                    <Download data-icon="inline-end" aria-hidden="true" />
+                  </a>
                 </Button>
               </div>
             </div>
@@ -71,7 +88,8 @@ export function AboutHeroSection() {
                 Software engineer
               </div>
               <div className="absolute right-5 bottom-5 max-w-xs rounded-2xl border border-white/12 bg-black/30 px-4 py-3 text-sm leading-6 text-white/88 backdrop-blur-sm">
-                Building software with thoughtful interfaces, dependable backend foundations, and room for scale.
+                Building software with thoughtful interfaces, dependable backend
+                foundations, and room for scale.
               </div>
             </div>
           </Reveal>
