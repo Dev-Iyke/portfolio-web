@@ -44,7 +44,7 @@ export const recruiterTracks = {
     ],
     cvLinks: [
       {
-        href: "/cv/Obasi-ikechukwu-FE.pdf",
+        href: "/cv/Obasi-Ikechukwu-Frontend-Developer.pdf",
         label: "Download frontend CV (PDF)",
         download: "Obasi-Ikechukwu-Frontend-CV.pdf",
       },
@@ -143,7 +143,7 @@ export const recruiterTracks = {
     ],
     cvLinks: [
       {
-        href: "/cv/Obasi-Ikechukwu-Backend-Dev.pdf",
+        href: "/cv/Obasi-Ikechukwu-Backend-Developer.pdf",
         label: "Download backend CV (PDF)",
         download: "Obasi-Ikechukwu-Backend-CV.pdf",
       },

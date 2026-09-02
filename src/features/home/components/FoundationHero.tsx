@@ -1,5 +1,5 @@
 ﻿import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Section } from "@/components/layout/Section";
 import { Reveal } from "@/components/motion/Reveal";
@@ -30,12 +30,15 @@ export function FoundationHero() {
           </Reveal>
           <Reveal delay={heroSequence.headline} distance={22}>
             <h1 className="max-w-5xl text-center font-heading text-4xl leading-[1.1] font-semibold tracking-[0.015em] text-balance sm:text-5xl md:text-start md:text-6xl lg:text-7xl xl:text-8xl">
-              I build software that&apos;s intuitive on the surface and dependable underneath.
+              I build software that&apos;s intuitive on the surface and
+              dependable underneath.
             </h1>
           </Reveal>
           <Reveal delay={heroSequence.description}>
             <p className="mt-7 max-w-2xl text-center text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8 md:text-start">
-              I&apos;m Obasi Ikechukwu. I turn product ideas into reliable software through thoughtful frontend engineering, dependable backend foundations, and modern web technologies.
+              I&apos;m Obasi Ikechukwu. I turn product ideas into reliable
+              software through thoughtful frontend engineering, dependable
+              backend foundations, and modern web technologies.
             </p>
           </Reveal>
           <Reveal
@@ -55,6 +58,15 @@ export function FoundationHero() {
               </Button>
               <Button asChild size="lg" variant="outline">
                 <Link href="/brief">View recruiter brief</Link>
+              </Button>
+              <Button asChild variant="outline">
+                <a
+                  href={"/cv/Obasi-Ikechukwu-Software-Engineer.pdf"}
+                  download={"Obasi-Ikechukwu-Software-Engineer-CV.pdf"}
+                >
+                  {"Download CV (PDF)"}
+                  <Download data-icon="inline-end" aria-hidden="true" />
+                </a>
               </Button>
             </div>
           </Reveal>
